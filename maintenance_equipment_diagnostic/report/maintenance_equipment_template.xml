@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_diagnostic_equipment_document">
+
+        <t t-call="web.external_layout">
+            <div class="page">
+                <div class="oe_structure"/>
+
+                <h2 class="text-center">[<span t-field="o.equipment_id.name"/>]
+                </h2>
+                <br></br>
+
+
+
+
+
+                <div class="oe_structure"/>
+            </div>
+            <div id="footer" class="footer"></div>
+        </t>
+    </template>
+
+
+    <template id="report_diagnostic_equipment">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="maintenance_equipment_diagnostic.report_diagnostic_equipment_document"
+                   t-lang="o.partner_id.lang"/>
+            </t>
+        </t>
+    </template>
+
+</odoo>

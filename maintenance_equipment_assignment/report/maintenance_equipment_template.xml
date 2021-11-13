@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_assignment_equipment_1_document">
+        <t t-set="iso_code" t-value="'f-457'"/>
+        <t t-set="iso_revi" t-value="'01'"/>
+        <t t-set="iso_date" t-value="'29.02.2017'"/>
+        <t t-set="company" t-value="res_company"/>
+
+        <div id="header" class="header">
+            <div class="row">
+                <div class="col-2 border border-dark mt-2">
+                    <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 35px;"
+                         alt="logo" class="mt-4 ml-2 "/>
+                </div>
+                <div class="col-8 border border-left-0 border-right-0 border-dark mt-2 text-center">
+                    <h2 class="mt-2">
+                        <span t-field="company.name"/>
+                    </h2>
+                    <h5 class="mt-2">RESPONSIVA DE EQUIPO</h5>
+                </div>
+                <div class="col-2 border border-dark mt-2 p-0">
+                    <p class="m-0 pl-2 ">Código:
+                        <span t-esc="iso_code"/>
+                    </p>
+                    <p class="m-0 pl-2 border border-left-0 border-dark">Edición:
+                        <span t-esc="iso_revi"/>
+                    </p>
+                    <p class="m-0 pl-2 border border-left-0 border-dark">Fecha:
+                        <span t-esc="iso_date"/>
+                    </p>
+                    <p class="m-0 pl-2 ">
+                        Página:
+                        <span class="page"/>
+                        /
+                        <span class="topage"/>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <t t-call="web.external_layout">
+            <div class="page">
+                <div class="oe_structure"/>
+
+                <h2 class="text-center">[<span t-field="o.equipment_id.name"/>]
+                </h2>
+                <br></br>
+                <div>
+                    <p class="text-justify ml-5 mr-5">Por este medio hago constar que he recibido de los procesos de
+                        <strong>it</strong>
+                        Plastinova Industrial S.A. de C.V. el equipo que se menciona a continuación:
+                    </p>
+
+
+                    <div id="informations" class="row mt32 mb32 ml-5 mr-5">
+                        <table class="table table-sm o_main_table">
+                            <colgroup>
+                                <col span="2" style="width: 50%"/>
+                                <col span="2" style="width: 50%"/>
+                            </colgroup>
+
+                            <tbody class="text-left">
+                                <tr class="text-left">
+                                    <th class="text-left border border-dark">
+                                        <strong>No. serie</strong>
+                                    </th>
+                                    <td class="text-left border border-dark">
+                                        <span t-field="o.equipment_id.serial_no"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th name="th_taxes" class="text-left border border-dark">
+                                        <strong>Modelo</strong>
+                                    </th>
+                                    <td class="text-left border border-dark">
+                                        <span t-field="o.equipment_id.model"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th name="th_date_req" class="text-left border border-dark">
+                                        <strong>Fecha de recepcion</strong>
+                                    </th>
+                                    <td class="text-left border border-dark">
+                                        <span t-field="o.date_order"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th name="th_price_unit" class="text-left border border-dark">
+                                        <strong>Tiempo de depreciación</strong>
+                                    </th>
+                                    <td class="text-left border border-dark">
+                                        <span t-field="o.equipment_id.depreciation_time"/>
+                                        <span>( Meses )</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th name="th_quantity" class="text-left border border-dark">
+                                        <strong>costo</strong>
+                                    </th>
+                                    <td class="text-left border border-dark">
+                                        <span t-field="o.equipment_id.cost"
+                                              t-options="{'widget': 'monetary','display_currency': res_company.currency_id}"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                    <p class="text-justify ml-5 mr-5">También indicó que el equipo está en perfecto estado y cualquier
+                        daño a este
+                        es responsabilidad mía como usuario y me comprometo a mantenerlo en la misma condición en que se
+                        me entrega
+                        y utilizarla exclusivamente para mis actividades laborales.
+                    </p>
+
+                    <p class="text-justify ml-5 mr-5">Así mismo, es de mi conocimiento que no puedo modificar la
+                        configuración,
+                        ni instalar software, etc. sin que este sea previamente autorizado. en caso de su extravió, daño
+                        o uso inadecuado,
+                        me responsabilizo a pagar el costo de reposición del equipo según el tiempo de depreciación.
+                    </p>
+
+
+                    <p class="text-justify ml-5 mr-5">Está autorizado para sacar este equipo de plastinova:
+                        <strong class="border border-dark p-1">
+                            <span t-if="o.equipment_id.authorization_exit">Sí</span>
+                            <span t-else="">No</span>
+                        </strong>
+                    </p>
+
+
+                    <p class="text-justify ml-5 mr-5">
+                        <strong>
+                            <span>Nota:</span>
+                        </strong>
+                        De estar autorizado y exista algún robo,
+                        deberá presentar denuncia ante autoridad competente.
+                    </p>
+
+                    <div id="informations" class="row mt32 mb32 text-justify ml-5 mr-5">
+                        <table class="table table-sm o_main_table">
+                            <colgroup>
+                                <col span="2" style="width: 50%"/>
+                                <col span="2" style="width: 50%"/>
+                            </colgroup>
+                            <thead>
+                                <tr class="border border-dark">
+                                    <th class="border border-dark">
+                                        <strong>Proceso que recibe</strong>
+                                    </th>
+                                    <th class="border border-dark">
+                                        <strong>Proceso que entrega</strong>
+                                    </th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+                                <tr class="border border-dark">
+                                    <td class="border border-dark">
+                                        <span t-field="o.department_employee_id"/>
+                                    </td>
+                                    <td class="border border-dark">
+                                        <span>it</span>
+                                    </td>
+                                </tr>
+                                <tr class="border border-dark">
+                                    <td class="border border-dark">
+                                        <strong>Firma de empleado</strong>
+                                    </td>
+                                    <td class="border border-dark">
+                                        <strong>Firma del responsable de la entrega</strong>
+                                    </td>
+                                </tr>
+                                <tr class="border border-dark">
+                                    <td class="border border-dark">.</td>
+                                    <td class="border border-dark"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-justify ml-5 mr-5">
+                        <strong>CC.: Expediente en RRHH</strong>
+                    </p>
+                </div>
+                <div class="oe_structure"/>
+            </div>
+            <div id="footer" class="footer"></div>
+        </t>
+    </template>
+
+    <template id="report_assignment_equipment_2_document">
+        <t t-call="web.external_layout">
+            <div class="page">
+                <div class="oe_structure"/>
+
+                <div class="mb-5">
+                    <h2 class="text-center ">ASIGNACIÓN DE EQUIPO #
+                        <span t-field="o.name"/>
+                    </h2>
+                </div>
+
+
+                <div id="informations" class="ml-5 mr-5">
+                    <table>
+                        <colgroup>
+                            <col span="2" style="width:20%"/>
+                            <col span="2" style="width:20%"/>
+                        </colgroup>
+
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>Fecha:</strong>
+                                </td>
+                                <td scope="col">
+                                    <span t-field="o.date_order"
+                                          t-options="{'widget': 'datetime', 'format': 'dd/mm/yyyy'}"/>
+                                </td>
+                                <td>
+                                    <strong>Tipo:</strong>
+                                </td>
+                                <td scope="col">
+                                    <span t-field="o.assignment_type"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="col">
+                                    <strong>Departamento:</strong>
+                                </td>
+                                <td scope="col">
+                                    <span t-field="o.department_employee_id"/>
+                                </td>
+                                <td scope="col">
+                                    <strong>Representante de IT:</strong>
+                                </td>
+                                <td scope="col">
+                                    <span t-field="o.user_id"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="col">
+                                    <strong>Asignado a:</strong>
+                                </td>
+                                <td scope="col">
+                                    <span t-field="o.employee_id"/>
+                                </td>
+                                <td scope="col">
+                                    <strong>Encargado:</strong>
+                                </td>
+                                <td scope="col">
+                                    <span t-field="o.parent_employee_id"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br></br>
+
+                <h5 class="text-center ml-5 mr-5">DETALLES</h5>
+                <div>
+                    <table class="ml-5 mr-5">
+                        <colgroup>
+                            <col span="3" style="width:10%"/>
+
+
+                        </colgroup>
+                        <th>
+                            <tr class="text-center">
+                                <td scope="col">
+                                    <strong>Categoría</strong>
+                                </td>
+                                <td scope="col">
+                                    <strong>Marca</strong>
+                                </td>
+                                <td scope="col">
+                                    <strong>No. serie</strong>
+                                </td>
+                            </tr>
+                        </th>
+                        <tbody class="text-center">
+                            <tr>
+                                <td scope="col">
+                                    <span t-field="o.equipment_id.category_id"/>
+                                </td>
+                                <td scope="col">
+                                    <span t-field="o.equipment_id.name"/>
+                                </td>
+                                <td scope="col">
+                                    <span t-field="o.equipment_id.serial_no"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br></br>
+                <div>
+                    <img class="mr-5 mt-5" t-if="o.equipment_id.image_equipment"
+                         t-att-src="image_data_uri(o.equipment_id.image_equipment)"
+                         style="float:right; height:100pt;width:100"/>
+                </div>
+                <br></br>
+
+                <h5 class="text-center">CARACTERÍSTICAS</h5>
+                <div id="informations" class="ml-5 mr-5">
+                    <table>
+                        <colgroup>
+                            <col span="2" style="width:30%"/>
+                            <col span="2" style="width:50%"/>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td scope="col">
+                                    <strong>Código de inventario:</strong>
+                                </td>
+                                <td scope="col">
+                                    <span t-field="o.equipment_id.cod_inventory"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="col">
+                                    <strong>Procesador:</strong>
+                                </td>
+                                <td scope="col">
+                                    <span t-field="o.equipment_id.description_processor"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="col">
+                                    <strong>Sistema operativo:</strong>
+                                </td>
+                                <td scope="col">
+                                    <span t-field="o.equipment_id.system_operative"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="col">
+                                    <strong>Memoria RAM:</strong>
+                                </td>
+                                <td scope="col">
+                                    <span t-field="o.equipment_id.ram_memory"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="col">
+                                    <strong>Disco duro:</strong>
+                                </td>
+                                <td scope="col">
+                                    <span t-field="o.equipment_id.storage_hdd"/>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                    <p class="text-justify ml-5 mr-5">
+                        <strong>
+                            <span>Causa de solicitud de equipo:</span>
+                        </strong>
+                        <span t-field="o.reason_assignment"/>
+                    </p>
+                </br>
+                <br>
+                    <p class="text-justify ml-5 mr-5">
+                        <strong>
+                            <span>Procedencia del equipo:</span>
+                        </strong>
+                        <span t-field="o.origin_assignment"/>
+                    </p>
+                </br>
+                <br>
+                    <p class="text-justify ml-5 mr-5">
+                        <strong>
+                            <span>Observaciones:</span>
+                        </strong>
+                        <span t-field="o.notes_assignment"/>
+                    </p>
+                </br>
+
+                <div class="oe_structure"/>
+            </div>
+            <div id="footer" class="footer">
+                <div id="firms" class="row text-center mt-5 last-page">
+                    <div class="col-6 bm-2 text-center">
+                        <div style="border-bottom: 1px solid black;"/>
+                        <strong>Nombre y Firma IT</strong>
+                    </div>
+                    <div class="col-6 bm-2 text-center">
+                        <div style="border-bottom: 1px solid black;"/>
+                        <strong>Usuario</strong>
+                    </div>
+                </div>
+
+            </div>
+        </t>
+    </template>
+
+    <template id="report_assignment_equipment_1">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="maintenance_equipment_assignment.report_assignment_equipment_1_document"
+                   />
+            </t>
+        </t>
+    </template>
+
+    <template id="report_assignment_equipment_2">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="maintenance_equipment_assignment.report_assignment_equipment_2_document"
+                   />
+            </t>
+        </t>
+    </template>
+</odoo>

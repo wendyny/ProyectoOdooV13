@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_maintenance_equipment_document">
+        <t t-call="web.external_layout">
+           <div class="page">
+            <div class="oe_structure"/>
+
+            <h2>DataSheet [<span t-field="o.name"/>] </h2>
+
+             <div id="informations" class="row mt32 mb32">
+
+               <table class="table table-sm o_main_table">
+                    <thead>
+                        <tr>
+                            <th name="th_description"><strong>No. Serie</strong></th>
+                            <th name="th_taxes"><strong>Modelo</strong></th>
+                            <th name="th_date_req" class="text-center"><strong>Categoria</strong></th>
+                            <th name="th_quantity" class="text-right"><strong>Asignado A</strong></th>
+                            <th name="th_price_unit" class="text-right"><strong>Garantia</strong></th>
+                            <th name="th_amount" class="text-right"><strong>Estado de Equipo</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                      <tr >
+                        <td><span t-field="o.serial_no"/></td>
+                        <td><span t-field="o.model"/></td>
+                        <td><span t-field="o.category_id"/></td>
+                         <td class="text-center"><span t-field="o.equipment_assign_to"/></td>
+                         <td class="text-center"><span t-field="o.state_warranty"/></td>
+                         <td class="text-center"><span t-field="o.state_equipment"/></td>
+                      </tr>
+
+                    </tbody>
+                </table>
+             </div>
+
+            <div class="oe_structure"/>
+        </div>
+        </t>
+    </template>
+
+    <template id="report_maintenance_equipment">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="o">
+            <t t-call="maintenance_equipment_it.report_maintenance_equipment_document" t-lang="o.partner_id.lang"/>
+        </t>
+    </t>
+</template>
+</odoo>

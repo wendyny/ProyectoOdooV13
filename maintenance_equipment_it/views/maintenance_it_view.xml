@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hr_equipment_view_form_inherit" model="ir.ui.view">
+        <field name="name">hr.equipment.view.form</field>
+        <field name="model">maintenance.equipment</field>
+        <field name="inherit_id" ref="maintenance.hr_equipment_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[contains(@class, 'oe_title')]" position="before">
+             <field name="image_equipment" widget="image" class="oe_avatar"/>
+                <div class="oe_title">
+                    <h1>
+
+                    </h1>
+                </div>
+            </xpath>
+            <xpath expr="//sheet" position="before">
+                <header>
+                    <button name="button_good" type="object" string="Set State Good" attrs="{'invisible': [('state_equipment', '=', 'good')]}"/>
+                    <button name="button_bad" type="object" string="Set State Bad" attrs="{'invisible': [('state_equipment', '=', 'bad')]}"/>
+                    <field name="state_equipment" widget="statusbar" statusbar_visible="good, bad" readonly="1"/>
+                </header>
+            </xpath>
+
+            <xpath expr="//page[2]/group/group//field[@name='warranty_date']" position="after">
+                <field name="depreciation_time"/>
+                <field name="state_warranty"/>
+            </xpath>
+
+            <xpath expr="//page[3]" position="after">
+                <page string="IT INFORMATION">
+                    <group>
+                        <group>
+                            <field name="ip_address"/>
+                            <field name="architecture"/>
+                            <field name="description_processor"/>
+                            <field name="system_operative"/>
+                            <field name="ram_memory"/>
+                            <field name="active_backup"/>
+                        </group>
+                        <group>
+                            <field name="storage_hdd"/>
+                            <field name="cod_inventory"/>
+                            <field name="active_vnc"/>
+                            <field name="access_network"/>
+                            <field name="authorization_exit"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

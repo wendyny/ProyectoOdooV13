@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+            string="Diagnostic"
+            id="action_report_diagnostic_equipment"
+            model="maintenance.equipment.diagnostic"
+            report_type="qweb-pdf"
+            name="maintenance_equipment_diagnostic.report_diagnostic_equipment"
+            file="maintenance_equipment_diagnostic.report_diagnostic_equipment"
+            print_report_name="
+                 'Equipment - %s' % (object.name) "
+        />
+    </data>
+</odoo>

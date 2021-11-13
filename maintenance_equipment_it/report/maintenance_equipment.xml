@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+            string="Datasheet"
+            id="action_report_maintenance_equipment"
+            model="maintenance.equipment"
+            report_type="qweb-pdf"
+            name="maintenance_equipment_it.report_maintenance_equipment"
+            file="maintenance_equipment_it.report_maintenance_equipment"
+            print_report_name="
+                 'Equipment - %s' % (object.name) "
+        />
+    </data>
+</odoo>
