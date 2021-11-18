@@ -2,14 +2,185 @@
 <odoo>
 
     <template id="report_diagnostic_equipment_document">
+ <t t-set="iso_code" t-value="'F-693'"/>
+        <t t-set="iso_revi" t-value="'01'"/>
+        <t t-set="iso_date" t-value="'14/02/2020'"/>
+        <t t-set="iso_name" t-value="'Diagnóstico de Equipo'"/>
+        <t t-set="company" t-value="res_company"/>
+
+        <div id="header" class="header mt-3 pt-2">
+            <table class="table table-sm o_main_table">
+                <colgroup>
+                      <col style="width:18%"/>
+                      <col style="width:64%"/>
+                      <col style="width:18%"/>
+                </colgroup>
+                <tr class="border border-dark">
+                  <td rowspan = "4" class="border border-dark text-center" style="vertical-align:middle;">
+                     <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 35px;" alt="Logo" />
+                  </td>
+                  <td rowspan = "2" class="border border-dark text-center" style="vertical-align:middle;">
+                     <h2><span t-field="company.name"/></h2>
+                  </td>
+                  <td class="border border-dark">
+                    Código: <span t-esc="iso_code"/>
+                  </td>
+               </tr>
+               <tr class="border border-dark">
+                  <td class="border border-dark">
+                    Edición: <span t-esc="iso_revi"/>
+                  </td>
+               </tr>
+               <tr class="border border-dark">
+                  <td rowspan = "2"  class="border border-dark text-center " style="vertical-align:middle;">
+                     <h5 ><span t-esc="iso_name"/></h5>
+                  </td>
+                  <td class="border border-dark">
+                     Fecha: <span t-esc="iso_date"/>
+                  </td>
+               </tr>
+               <tr class="border border-dark">
+
+                  <td class="border border-dark">
+                        Pagina:
+                        <span class="page"/>
+                        /
+                        <span class="topage"/>
+                  </td>
+               </tr>
+
+            </table>
+
+
+        </div>
+
 
         <t t-call="web.external_layout">
             <div class="page">
                 <div class="oe_structure"/>
+                 <div class="watermark" t-if="o.state in ['draft','cancel']"
+                     style="transform:rotate(-45deg); -webkit-transform:rotate(-45deg); font-size:80px; color:red; top:400px;position:absolute;text-align:center;width:100%;absolute;opacity:0.25;">
+                    <span t-if="o.state == 'draft'">No Confirmado</span>
+                    <span t-else="">Cancelado</span>
+                </div>
 
-                <h2 class="text-center">[<span t-field="o.equipment_id.name"/>]
-                </h2>
-                <br></br>
+
+           <div class="mb-5">
+              <h2 class="text-center ">DIAGNÓSTICO # <span style="color:black" t-field="o.name"/></h2>
+            </div>
+                 <div id="informations">
+       <table  class="table table-sm o_main_table">
+         <colgroup>
+              <col style="width:30%"/>
+              <col style="width:70%"/>
+          </colgroup>
+          <tbody>
+          <tr>
+          <td><strong> Fecha: </strong></td>
+              <td class="text-left"><span t-field="o.date_order" t-options="{'widget': 'datetime', 'format': 'dd/MM/YYYY'}"/> </td>
+          </tr>
+          <tr >
+              <td scope="col"><strong>Proceso Solicitante: </strong></td>
+              <td scope="col"><span t-field="o.department_employee_id"/> </td>
+          </tr>
+          <tr>
+              <td scope="col"><strong>Usuario: </strong></td>
+              <td scope="col"><span t-field="o.employee_id"/> </td>
+          </tr>
+          <tr>
+             <td scope="col"><strong>Jefe Inmediato: </strong></td>
+              <td scope="col"><span t-field="o.parent_employee_id"/></td>
+        </tr>
+          <tr>
+              <td scope="col"><strong>Responsable del Diagnóstico: </strong></td>
+              <td scope="col"><span t-field="o.user_id"/> </td>
+          </tr>
+        </tbody>
+      </table>
+      <br/>
+      </div>
+        <div id="informations">
+       <table class="table table-sm o_main_table">
+         <colgroup>
+               <col style="width:20%"/>
+               <col style="width:30%"/>
+                <col style="width:20%"/>
+                 <col style="width:30%"/>
+
+          </colgroup>
+          <tbody>
+            <tr>
+              <td colspan = "4"><strong> Características Generales del Equipo:</strong></td>
+          </tr>
+          <tr>
+              <td scope="col"><strong> Equipo: </strong></td>
+              <td colspan="3" class="text-center"><span t-field="o.equipment_id.category_id"/> </td>
+          </tr>
+          <tr>
+              <td scope="col"><strong> Marca/ Modelo: </strong></td>
+              <td colspan="3" class="text-center"><span t-field="o.equipment_id.name"/> </td>
+          </tr>
+          <tr>
+              <td scope="col"><strong> No. Serie: </strong></td>
+              <td scope="col"><span t-field="o.equipment_id.serial_no"/> </td>
+              <td><strong> Código de inventario: </strong></td>
+              <td><span t-field="o.equipment_id.cod_inventory" t-if="o.equipment_id.cod_inventory==''"/>N/D</td>
+          </tr>
+          <tr>
+              <td scope="col"><strong> Procesador: </strong></td>
+              <td scope="col"><span t-field="o.equipment_id.description_processor"/> </td>
+             <td scope="col"><strong> Sistema Operativo: </strong></td>
+             <td scope="col"><span t-field="o.equipment_id.system_operative"/> </td>
+          </tr>
+          <tr>
+            <td scope="col"><strong> Memoria RAM: </strong></td>
+            <td scope="col"><span t-field="o.equipment_id.ram_memory"/> </td>
+            <td scope="col"><strong> Disco duro: </strong></td>
+            <td scope="col"><span t-field="o.equipment_id.storage_hdd"/> </td>
+          </tr>
+          <tr>
+          <td colspan = "4"><strong> Causa de solicitud de servicio:</strong></td>
+          </tr>
+          <tr height="80px">
+            <td colspan = "4"><span t-field="o.reason_diagnostic"/> </td>
+          </tr>
+         <tr>
+          <td colspan = "4"><strong> Descripción de la intervención del equipo:</strong></td>
+          </tr>
+          <tr height="80px">
+            <td colspan = "4"><span t-field="o.description_diagnostic"/> </td>
+          </tr>
+          <tr>
+          <td colspan = "4"><strong> Conclusión/Recomendación/Solución:</strong></td>
+          </tr>
+          <tr height="80px">
+            <td colspan = "4"><span t-field="o.suggestion_diagnostic"/> </td>
+          </tr>
+        </tbody>
+      </table>
+        </div>
+        <br/>
+     <div id="footer" class="footer">
+                <div id="firms" class="row text-center mt-5 last-page">
+                    <div class="col-6 bm-2 text-center">
+                        <div style="border-bottom: 1px solid black;"/>
+                        <strong> Nombre y Firma IT </strong>
+                    </div>
+
+                    <div class="col-6 bm-2 text-center">
+                        <div style="border-bottom: 1px solid black;"/>
+                        <strong> Nombre y Firma Solicitante</strong>
+                    </div>
+                </div>
+                <div class="text-center mt-3">
+                    <div t-if="report_type == 'pdf'">
+                        Page:
+                        <span class="page"/>
+                        /
+                        <span class="topage"/>
+                    </div>
+                </div>
+            </div>
 
 
 
