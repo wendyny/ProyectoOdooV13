@@ -23,12 +23,13 @@
             </xpath>
 
             <xpath expr="//page[2]/group/group//field[@name='warranty_date']" position="after">
+                <field name="cod_inventory"/>
                 <field name="depreciation_time"/>
                 <field name="state_warranty"/>
             </xpath>
 
             <xpath expr="//page[3]" position="after">
-                <page string="IT INFORMATION">
+                <page string="IT INFORMATION" groups="base.group_system">
                     <group>
                         <group>
                             <field name="ip_address"/>
@@ -40,7 +41,6 @@
                         </group>
                         <group>
                             <field name="storage_hdd"/>
-                            <field name="cod_inventory"/>
                             <field name="active_vnc"/>
                             <field name="access_network"/>
                             <field name="authorization_exit"/>

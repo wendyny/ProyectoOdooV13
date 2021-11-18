@@ -44,7 +44,8 @@ class MaintenanceDiagnostic(models.Model):
                                   compute='_compute_employee_data',
                                   check_company=True,
                                   required=True,
-                                  store=True
+                                  store=True,
+                                  copy=True
                                   )
 
     date_order = fields.Datetime('Order Date', required=True,

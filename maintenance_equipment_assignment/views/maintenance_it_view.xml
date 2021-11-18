@@ -10,7 +10,8 @@
                 <button class="oe_stat_button"
                         type="object"
                         name="get_assignment"
-                        icon="fa-fa-archive">
+                        icon="fa-th-large"
+                        groups="base.group_system">
                     <field string="Assignments" name="assignment_count" widget="statinfo"/>
                 </button>
             </div>
@@ -76,4 +77,31 @@
             </form>
         </field>
     </record>
+
+    <record id="hr_equipment_assignment_view_search" model="ir.ui.view">
+            <field name="name">hr.equipment.assignment.view.search</field>
+            <field name="model">maintenance.equipment.assignment</field>
+            <field name="arch" type="xml">
+                <search string="Search Equipment Assignment">
+                    <field name="name"/>
+                    <field name="equipment_id" />
+                    <field name="employee_id" />
+                    <field name="department_employee_id" />
+
+                    <filter name="show_draft" string="Draft" domain="[('state', '=', 'draft')]"/>
+                    <filter name="show_done" string="Done" domain="[('state', '=', 'done')]"/>
+
+                    <separator/>
+                    <filter name="order_date" string="Order Date" date="date_order"/>
+
+                    <group expand="0" string="Group By">
+                        <filter name="employee_id" string="Employee" domain="[]" context="{'group_by' : 'employee_id'}" />
+                        <filter name="department_employee_id" string="Department" domain="[]" context="{'group_by' : 'department_employee_id'}" />
+                        <filter name="user_id" string="User" domain="[]" context="{'group_by' :'user_id'}"/>
+                        <filter name="status" string="Status"  domain="[]" context="{'group_by' : 'state'}" />
+                    </group>
+
+                </search>
+            </field>
+        </record>
 </odoo>
