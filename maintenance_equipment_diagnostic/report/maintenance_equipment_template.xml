@@ -162,14 +162,18 @@
         <br/>
      <div id="footer" class="footer">
                 <div id="firms" class="row text-center mt-5 last-page">
-                    <div class="col-6 bm-2 text-center">
+                    <div class="col-4 bm-2 text-center">
                         <div style="border-bottom: 1px solid black;"/>
-                        <strong> Nombre y Firma IT </strong>
+                        <strong> Responsable del diagnóstico </strong>
+                    </div>
+                     <div class="col-4 bm-2 text-center">
+                        <div style="border-bottom: 1px solid black;"/>
+                        <strong> Aprobado por Jefe IT </strong>
                     </div>
 
-                    <div class="col-6 bm-2 text-center">
+                    <div class="col-4 bm-2 text-center">
                         <div style="border-bottom: 1px solid black;"/>
-                        <strong> Nombre y Firma Solicitante</strong>
+                        <strong> Solicitante</strong>
                     </div>
                 </div>
                 <div class="text-center mt-3">
