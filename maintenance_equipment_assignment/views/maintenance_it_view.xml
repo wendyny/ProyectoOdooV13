@@ -61,8 +61,8 @@
                         <group>
                             <field name="company_id" groups="base.group_multi_company" />
                             <field name="employee_id" />
-                            <field name="department_employee_id" />
-                            <field name="parent_employee_id"/>
+                            <field name="department_employee_id" required="1"/>
+                            <field name="parent_employee_id"  required="1"/>
                             <field name="origin_assignment"/>
                         </group>
                     </group>

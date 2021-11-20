@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_equipment_resume_document">
+        <t t-set="iso_code" t-value="'F-409'"/>
+        <t t-set="iso_revi" t-value="'01'"/>
+        <t t-set="iso_date" t-value="'14.07.2017'"/>
+        <t t-set="iso_name" t-value="'INVENTARIO DE EQUIPO INFORMÁTICO Y COMUNICACIÓN'"/>
+        <t t-set="company" t-value="res_company"/>
+
+        <div id="header" class="header mt-3 pt-2">
+            <table class="table table-sm o_main_table">
+                <colgroup>
+                      <col style="width:18%"/>
+                      <col style="width:64%"/>
+                      <col style="width:18%"/>
+                </colgroup>
+                <tr class="border border-dark">
+                  <td rowspan = "4" class="border border-dark text-center" style="vertical-align:middle;">
+                     <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 35px;" alt="Logo" />
+                  </td>
+                  <td rowspan = "2" class="border border-dark text-center" style="vertical-align:middle;">
+                     <h2><span t-field="company.name"/></h2>
+                  </td>
+                  <td class="border border-dark">
+                    Código: <span t-esc="iso_code"/>
+                  </td>
+               </tr>
+               <tr class="border border-dark">
+                  <td class="border border-dark">
+                    Edición: <span t-esc="iso_revi"/>
+                  </td>
+               </tr>
+               <tr class="border border-dark">
+                  <td rowspan = "2"  class="border border-dark text-center " style="vertical-align:middle;">
+                     <h5 ><span t-esc="iso_name"/></h5>
+                  </td>
+                  <td class="border border-dark">
+                     Fecha: <span t-esc="iso_date"/>
+                  </td>
+               </tr>
+               <tr class="border border-dark">
+
+                  <td class="border border-dark">
+                        Pagina:
+                        <span class="page"/>
+                        /
+                        <span class="topage"/>
+                  </td>
+               </tr>
+            </table>
+        </div>
+
+        <t t-call="web.external_layout">
+
+           <div class="page">
+             <div class="oe_structure"/>
+             <div>
+             <table  class="table table-sm o_main_table" style="width:100%">
+               <colgroup>
+                    <col style="width:10%"/>
+                    <col style="width:10%"/>
+                    <col style="width:5%"/>
+                    <col style="width:5%"/>
+                    <col style="width:10%"/>
+                    <col style="width:10%"/>
+                    <col style="width:10%"/>
+                    <col style="width:5%"/>
+                    <col style="width:5%"/>
+                    <col style="width:8%"/>
+                    <col style="width:8%"/>
+                    <col style="width:8%"/>
+                    <col style="width:15%"/>
+                </colgroup>
+                <thead class="text-center">
+                  <tr>
+                    <th class="border border-dark"><strong>Marca</strong></th>
+                    <th class="border border-dark"><strong>Modelo</strong></th>
+                    <th class="border border-dark"><strong>N/S</strong></th>
+                    <th class="border border-dark"><strong>Asignado</strong></th>
+                    <th class="border border-dark"><strong>Area</strong></th>
+                    <th class="border border-dark"><strong>Procesador</strong></th>
+                    <th class="border border-dark"><strong>RAM</strong></th>
+                    <th class="border border-dark"><strong>HD</strong></th>
+                    <th class="border border-dark"><strong>Plataforma</strong></th>
+                    <th class="border border-dark"><strong>SO</strong></th>
+                    <th class="border border-dark"><strong>IP</strong></th>
+                    <th class="border border-dark"><strong>Firma</strong></th>
+                  </tr>
+
+                </thead>
+
+              <tbody class="text-center">
+                 <t t-set="equipment" t-value=""/>
+                  <t t-foreach="docs" t-as="o">
+                      <tr  class="text-left" t-if="equipment!=o.category_id">
+                      <td colspan="12" class="border border-dark bg-primary"><span t-field="o.category_id"/></td>
+                      </tr>
+
+                      <tr>
+
+                        <td class="border border-dark"><span t-esc="o.name.split(' ')[0]"/> </td>
+                        <td class="border border-dark"><span t-field="o.model"/> </td>
+                        <td class="border border-dark"><span t-field="o.serial_no"/> </td>
+                        <td class="border border-dark"><span t-field="o.employee_id"/> </td>
+                        <td class="border border-dark"><span t-field="o.department_id"/> </td>
+                        <td class="border border-dark"><span t-field="o.description_processor"/> </td>
+                        <td class="border border-dark"><span t-field="o.ram_memory"/> </td>
+                        <td class="border border-dark"><span t-field="o.storage_hdd"/> </td>
+                        <td class="border border-dark"><span t-field="o.architecture"/> </td>
+                        <td class="border border-dark"><span t-field="o.system_operative"/> </td>
+                        <td class="border border-dark"><span t-field="o.ip_address"/> </td>
+                        <td class="border border-dark"></td>
+                      </tr>
+                      <t t-set="equipment" t-value="o.category_id"/>
+                  </t>
+                </tbody>
+            </table>
+            </div>
+          </div>
+        </t>
+    </template>
+
+    <template id="report_equipment_resume">
+    <t t-call="web.html_container">
+        <t t-call="maintenance_equipment_it.report_equipment_resume_document"/>
+    </t>
+</template>
+</odoo>

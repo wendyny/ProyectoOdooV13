@@ -14,6 +14,9 @@
         'views/maintenance_it_view.xml',
         'report/maintenance_equipment.xml',
         'report/maintenance_equipment_template.xml',
+
+        'report/maintenance_equipment_resume_template.xml',
+        'report/maintenance_equipment_resume_wizard.xml',
     ],
     'installable': True,
     'application': True,

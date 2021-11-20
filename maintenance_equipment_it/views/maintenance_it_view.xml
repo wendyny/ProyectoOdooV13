@@ -52,4 +52,24 @@
         </field>
     </record>
 
+    <record id="hr_equipment_view_kanban_inherit" model="ir.ui.view">
+        <field name="name">hr.equipment.view.kanban</field>
+        <field name="model">maintenance.equipment</field>
+        <field name="inherit_id" ref="maintenance.hr_equipment_view_kanban"/>
+        <field name="arch" type="xml">
+
+             <xpath expr="//div[contains(@t-attf-class,'oe_kanban_card')]" position="attributes">
+                <attribute name="t-attf-class" add="o_kanban_record_has_image_fill o_hr_kanban_record" separator=" "/>
+            </xpath>
+
+            <xpath expr="//div[contains(@t-attf-class,'oe_kanban_card')]//div[@class='oe_kanban_content']" position="before">
+                <field name="image_equipment" widget="image" class="o_kanban_image_fill_left mr-2" options="{'background': true, 'preventClicks': false, 'size':[80,80]}"/>
+            </xpath>
+
+            <xpath expr="//div[@class='oe_kanban_content']" position="attributes">
+                <attribute name="class" add="ml-2" separator=" "/>
+            </xpath>
+        </field>
+    </record>
+
 </odoo>

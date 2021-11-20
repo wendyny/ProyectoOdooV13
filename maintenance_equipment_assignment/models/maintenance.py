@@ -69,13 +69,13 @@ class MaintenanceAssignment(models.Model):
                                              compute='_compute_employee_data',
                                              inverse="_compute_employee_inv",
                                              states=READONLY_STATES,
-                                             required=True, store=True)
+                                             store=True)
 
     parent_employee_id = fields.Many2one('hr.employee', string='Parent',
                                          compute='_compute_employee_data',
                                          inverse="_compute_employee_inv",
                                          states=READONLY_STATES,
-                                         required=True, store=True)
+                                         store=True)
 
     reason_assignment = fields.Text('Reasons of Assignment', required=True,
                                     states=READONLY_STATES)

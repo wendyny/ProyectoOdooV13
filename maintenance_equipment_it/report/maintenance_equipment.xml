@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+        <record id="paper_format_letter_landscape" model="report.paperformat">
+            <field name="name">US Letter Landscape</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">335</field>
+            <field name="page_width">216</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">40</field>
+            <field name="margin_bottom">28</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">35</field>
+            <field name="dpi">90</field>
+        </record>
+
         <report
             string="Datasheet"
             id="action_report_maintenance_equipment"
@@ -8,6 +24,19 @@
             report_type="qweb-pdf"
             name="maintenance_equipment_it.report_maintenance_equipment"
             file="maintenance_equipment_it.report_maintenance_equipment"
+            print_report_name="
+                 'Equipment - %s' % (object.name) "
+        />
+
+
+        <report
+            string="Equipment Resume"
+            id="action_report_equipment_resume"
+            model="maintenance_equipment_it.report.resume.wizard"
+            report_type="qweb-pdf"
+            paperformat="paper_format_letter_landscape"
+            name="maintenance_equipment_it.report_equipment_resume"
+            file="maintenance_equipment_it.report_equipment_resume"
             print_report_name="
                  'Equipment - %s' % (object.name) "
         />
