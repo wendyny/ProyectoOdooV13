@@ -75,11 +75,11 @@
 
                             <tbody>
                                 <tr>
-                                    <th class="text-left border border-dark">
+                                    <th name="marca" class="text-left border border-dark">
                                         <strong>Marca</strong>
                                     </th>
-                                    <td name="th_name" class="text-left border border-dark">
-                                        <span t-field="o.equipment_id.name"/>
+                                    <td  class="text-left border border-dark">
+                                       <span t-esc="o.equipment_id.name.split(' ')[0]"/>
                                     </td>
                                 </tr>
                                 <tr class="text-left">
@@ -350,29 +350,35 @@
           <tbody>
          <tr>
               <td><strong> Código de inventario: </strong></td>
-              <td><span t-field="o.equipment_id.cod_inventory" t-if="o.equipment_id.cod_inventory==''"/>N/D
-
-
-              </td>
+              <td><span t-if="o.equipment_id.cod_inventory" t-field="o.equipment_id.cod_inventory"/>
+                                       <span t-else="">N/D</span></td>
               <td rowspan = "5">
                     <img class="mx-5" t-if="o.equipment_id.image_equipment" t-att-src="image_data_uri(o.equipment_id.image_equipment)" style="float:right; height:120pt;width:100"/>
               </td>
           </tr>
           <tr>
               <td scope="col"><strong> Procesador: </strong></td>
-              <td scope="col"><span t-field="o.equipment_id.description_processor"/> </td>
+              <td scope="col"><span t-if="o.equipment_id.description_processor"
+                                    t-field="o.equipment_id.description_processor"/>
+                            <span t-else="">N/A</span> </td>
           </tr>
           <tr>
              <td scope="col"><strong> Sistema Operativo: </strong></td>
-             <td scope="col"><span t-field="o.equipment_id.system_operative"/> </td>
+             <td scope="col"><span t-if="o.equipment_id.system_operative"
+                                    t-field="o.equipment_id.system_operative"/>
+                            <span t-else="">N/A</span></td>
           </tr>
           <tr>
             <td scope="col"><strong> Memoria RAM: </strong></td>
-            <td scope="col"><span t-field="o.equipment_id.ram_memory"/> </td>
+            <td scope="col"><span t-if="o.equipment_id.ram_memory"
+                                    t-field="o.equipment_id.ram_memory"/>
+                            <span t-else="">N/A</span></td>
           </tr>
           <tr>
             <td scope="col"><strong> Disco duro: </strong></td>
-            <td scope="col"><span t-field="o.equipment_id.storage_hdd"/> </td>
+            <td scope="col"><span t-if="o.equipment_id.storage_hdd"
+                                    t-field="o.equipment_id.storage_hdd"/>
+                            <span t-else="">N/A</span></td>
           </tr>
           <tr>
           <td colspan = "3"><strong> Causa de solicitud de equipo:</strong></td>
@@ -409,14 +415,6 @@
                         <strong> Usuario</strong>
                     </div>
                 </div>
-                <div class="text-center mt-3">
-                    <div t-if="report_type == 'pdf'">
-                        Page:
-                        <span class="page"/>
-                        /
-                        <span class="topage"/>
-                    </div>
-                </div>
             </div>
 
             <div class="oe_structure"/>
@@ -426,67 +424,233 @@
     </template>
 
     <template id="report_assignment_equipment_checklist_3_document">
-        <t t-set="iso_code" t-value="'F-693'"/>
-        <t t-set="iso_revi" t-value="'01'"/>
-        <t t-set="iso_date" t-value="'14/02/2020'"/>
-        <t t-set="iso_name" t-value="'Checklist Entrega de Equipo de Computo'"/>
+        <t t-set="iso_code" t-value="'----'"/>
+        <t t-set="iso_revi" t-value="'----'"/>
+        <t t-set="iso_date" t-value="'----'"/>
+        <t t-set="iso_name" t-value="'Checklist Entrega de Equipo de Cómputo'"/>
         <t t-set="company" t-value="res_company"/>
 
-        <div id="header" class="header mt-3 pt-2">
-            <table class="table table-sm o_main_table">
-                <colgroup>
-                      <col style="width:18%"/>
-                      <col style="width:64%"/>
-                      <col style="width:18%"/>
-                </colgroup>
-                <tr class="border border-dark">
-                  <td rowspan = "4" class="border border-dark text-center" style="vertical-align:middle;">
-                     <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 35px;" alt="Logo" />
-                  </td>
-                  <td rowspan = "2" class="border border-dark text-center" style="vertical-align:middle;">
-                     <h2><span t-field="company.name"/></h2>
-                  </td>
-                  <td class="border border-dark">
-                    Código: <span t-esc="iso_code"/>
-                  </td>
-               </tr>
-               <tr class="border border-dark">
-                  <td class="border border-dark">
-                    Edición: <span t-esc="iso_revi"/>
-                  </td>
-               </tr>
-               <tr class="border border-dark">
-                  <td rowspan = "2"  class="border border-dark text-center " style="vertical-align:middle;">
-                     <h5 ><span t-esc="iso_name"/></h5>
-                  </td>
-                  <td class="border border-dark">
-                     Fecha: <span t-esc="iso_date"/>
-                  </td>
-               </tr>
-               <tr class="border border-dark">
+        <div id="header" class="header mt-0 pt-0">
 
-                  <td class="border border-dark">
-                        Pagina:
-                        <span class="page"/>
-                        /
-                        <span class="topage"/>
-                  </td>
-               </tr>
+            <h2 class="text-center">Checklist Entrega de Equipo de Cómputo</h2>
 
-            </table>
+                        <table class="table table-sm o_main_table border border-dark">
+                            <colgroup>
+                                <col style="width:80%"/>
+                                <col style="width:20%"/>
+                            </colgroup>
+                            <theader>
+                              <th class="text-center bg-primary">Descripción de Actividad</th>
+                              <th class="text-center bg-primary">Verificación</th>
+                            </theader>
+                            <tbody>
+                                <tr>
+                                  <td class="text-left">
+                                   1. Registro en el Inventario del Equipo Informático.
+                                  </td>
+                                  <td class="border border-dark"/>
+                                </tr>
+                                 <tr>
+                                  <td class="text-left">
+                                  2. Configurar cuenta Local (IT).
+                                  </td>
+                                  <td class="border border-dark"/>
+                                </tr>
+                                <tr>
+                                  <td class="text-left">
+                                  3. Equipo Ingresado al Dominio.
+                                  </td>
+                                  <td class="border border-dark"/>
+                                </tr>
 
+                                <tr>
+                                  <td class="text-left">
+                                  4. Sistema Operativo Actualizado.
+                                  </td>
+                                  <td class="border border-dark"/>
+                                </tr>
 
-        </div>
+                                <tr>
+                                  <td class="text-left">
+                                  5. Registro de IP en el Microtik (LAN) con su respectivo comentario.
+                                  </td>
+                                  <td class="border border-dark"/>
+                                </tr>
+                                <tr>
+                                  <td class="text-left">
+                                  6. Registro de IP en el Microtik (WAN) Redes Wifi  con su respectivo comentario.
+                                  </td>
+                                  <td class="border border-dark"/>
+                                </tr>
+                                <tr>
+                                  <td class="text-left">
+                                  7. CInstalación del Emuladora para Sistema IGSA.
+                                  </td>
+                                  <td class="border border-dark"/>
+                                </tr>
+
+                                <tr>
+                                  <td class="text-left">
+                                  8.  Instalación y configuración de Impresora Compartida Matricial con Sistema IGSA.
+                                  </td>
+                                  <td class="border border-dark"/>
+                                </tr>
+
+                                <tr>
+                                  <td class="text-left">
+                                  9. Instalación de INFOR.
+                                  </td>
+                                  <td class="border border-dark"/>
+                                </tr>
+
+                                <tr>
+                                  <td class="text-left">
+                                  10. Crear cuenta de correo electrónico en el servidor y registro en archivo de excel.
+                                  </td>
+                                  <td class="border border-dark"/>
+                                </tr>
+
+                                <tr>
+                                  <td class="text-left">
+                                  11. Configuración de Cuenta de Correo Electrónico en la cuenta del usuario.
+                                  </td>
+                                  <td class="border border-dark"/>
+                                </tr>
+
+                                <tr>
+                                  <td class="text-left">
+                                  12. Incluir Archivo de Correo Electrónico Anterior o de Otro Usuario.
+                                  </td>
+                                  <td class="border border-dark"/>
+                                </tr>
+
+                                <tr>
+                                  <td class="text-left">
+                                  13. Configuración de Firma de Correo.
+                                  </td>
+                                  <td class="border border-dark"/>
+                                </tr>
+
+                                <tr>
+                                  <td class="text-left">
+                                  14. Archivo de correo Indizado.
+                                  </td>
+                                  <td class="border border-dark"/>
+                                </tr>
+
+                                <tr>
+                                  <td class="text-left">
+                                  15. Configuración de Reenviador  automático desde el servidor de correos.
+                                  </td>
+                                  <td class="border border-dark"/>
+                                </tr>
+
+                                <tr height="60px">
+                                  <td class="text-left">
+                                  16.  Sistemas de Plastinova Instalados:
+                                  </td>
+                                  <td class="border border-dark"/>
+                                </tr>
+
+                                <tr>
+                                  <td class="text-left">
+                                  17. Instalación de Runtine de Crystal Report.
+                                  </td>
+                                  <td class="border border-dark"/>
+                                </tr>
+
+                                <tr height="100px">
+                                  <td class="text-left">
+                                  18. Programas de Ofimática y Utilitarios Instalados.
+                                  </td>
+                                  <td class="border border-dark"/>
+                                </tr>
+                                <tr>
+                                  <td class="text-left">
+                                  19. Instalación de la Fuente para Código de Barra
+                                  </td>
+                                  <td class="border border-dark"/>
+                                </tr>
+                                  <tr>
+                                  <td class="text-left">
+                                  20. Configuración de la Región (Honduras) en el panel de control.
+                                  </td>
+                                  <td class="border border-dark"/>
+                                </tr>
+                                <tr>
+                                  <td class="text-left">
+                                  21.  Configuración de la Moneda (Lempira) en el panel de Control.
+                                  </td>
+                                  <td class="border border-dark"/>
+                                </tr>
+                                 <tr>
+                                  <td class="text-left">
+                                  22.  Configuración de Formato de fecha (dd/MM/yyyy) en el panel de control.
+                                  </td>
+                                  <td class="border border-dark"/>
+                                </tr>
+                                  <tr>
+                                  <td class="text-left">
+                                  23.  Instalación y Configuración de VNC (probado con la cuenta del usuario).
+                                  </td>
+                                  <td class="border border-dark"/>
+                                </tr>
+                                  <tr>
+                                  <td class="text-left">
+                                  24. Instalacion y configuracion de Synology (Portatiles).
+                                  </td>
+                                  <td class="border border-dark"/>
+                                </tr>
+                                 <tr>
+                                  <td class="text-left">
+                                  25. Total de GB de la copia de seguridad de Equipo anterior.
+                                  </td>
+                                  <td class="border border-dark"/>
+                                </tr>
+                                 <tr height="130px">
+                                  <td class="text-left">
+                                  26. Carpetas Compartidas Agregadas.
+                                  </td>
+                                  <td class="border border-dark"/>
+                                </tr>
+                                 <tr>
+                                  <td class="text-left">
+                                  27. Capacitar al usuario en el uso del Backup en la Nube (Synology)
+                                  </td>
+                                  <td class="border border-dark"/>
+                                </tr>
+                                 <tr>
+                                  <td class="text-left">
+                                  28. Hoja firmada de Asignación de Equipo.
+                                  </td>
+                                  <td class="border border-dark"/>
+                                </tr>
+                                <tr>
+                                  <td class="text-left">
+                                  29. Hoja Firmada de Responsiva de Equipo.
+                                  </td>
+                                  <td class="border border-dark"/>
+                                </tr>
+                                 <tr>
+                                  <td class="text-left">
+                                  30. Agregar conexion VPN.
+                                  </td>
+                                  <td class="border border-dark"/>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                </div>
         <t t-call="web.external_layout">
             <div class="page">
                 <div class="oe_structure"/>
-
                 <div>
+
 
                 </div>
                 <div class="oe_structure"/>
             </div>
-            <div id="footer" class="footer"></div>
+            <div id="footer" class="footer"/>
         </t>
     </template>
     <template id="report_assignment_equipment_1">

@@ -78,6 +78,9 @@ class MaintenanceDiagnostic(models.Model):
     suggestion_diagnostic = fields.Text('Suggestions of diagnostic',
                                         states=READONLY_STATES,
                                         required=True)
+    accessories_equipment = fields.Char('Accessories_equipment',
+                                        states=READONLY_STATES,
+                                        default='N/A')
 
     state = fields.Selection([
             ('draft', 'Draft'),
