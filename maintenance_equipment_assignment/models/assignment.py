@@ -21,6 +21,7 @@ class MaintenanceAssignment(models.Model):
             order.equipment_id.equipment_assign_to = 'employee'
             order.equipment_id.employee_id = order.employee_id
             order.equipment_id.department_id = order.department_employee_id
+            order.equipment_id.authorization_exit = order.authorization_exit
 
     READONLY_STATES = {
         'done': [('readonly', True)],
@@ -83,6 +84,8 @@ class MaintenanceAssignment(models.Model):
                                     states=READONLY_STATES)
     notes_assignment = fields.Text('Notes of Assignment',
                                    states=READONLY_STATES)
+    authorization_exit = fields.Boolean('Authorization Exit', copy=False,
+                                        default=False, states=READONLY_STATES)
 
     state = fields.Selection([
         ('draft', 'Draft'),

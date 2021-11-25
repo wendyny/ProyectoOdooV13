@@ -35,15 +35,16 @@
                             <field name="ip_address"/>
                             <field name="architecture"/>
                             <field name="description_processor"/>
-                            <field name="system_operative"/>
-                            <field name="ram_memory"/>
                             <field name="active_backup"/>
+                            <field name="authorization_exit"/>
                         </group>
                         <group>
                             <field name="storage_hdd"/>
+                            <field name="ram_memory"/>
+                            <field name="system_operative"/>
                             <field name="active_vnc"/>
                             <field name="access_network"/>
-                            <field name="authorization_exit"/>
+
                         </group>
                     </group>
                 </page>
@@ -72,4 +73,14 @@
         </field>
     </record>
 
+    <record id="hr_maintenance_maintenance_equipment_view_tree_inherit" model="ir.ui.view">
+            <field name="name">	maintenance.equipment.view.tree</field>
+            <field name="model">maintenance.equipment</field>
+            <field name="inherit_id" ref="maintenance.hr_equipment_view_tree"/>
+            <field name="arch" type="xml">
+             <tree>
+                <field name="state_equipment"/>
+           </tree>
+            </field>
+        </record>
 </odoo>

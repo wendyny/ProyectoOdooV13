@@ -58,58 +58,79 @@
              <div>
              <table  class="table table-sm o_main_table" style="width:100%">
                <colgroup>
-                    <col style="width:10%"/>
-                    <col style="width:10%"/>
-                    <col style="width:5%"/>
-                    <col style="width:5%"/>
-                    <col style="width:10%"/>
-                    <col style="width:10%"/>
-                    <col style="width:10%"/>
-                    <col style="width:5%"/>
-                    <col style="width:5%"/>
+                     <col style="width:4%"/>
                     <col style="width:8%"/>
+                    <col style="width:10%"/>
+                    <col style="width:4%"/>
+                    <col style="width:10%"/>
+                    <col style="width:13%"/>
+                    <col style="width:5%"/>
+                    <col style="width:5%"/>
+                    <col style="width:5%"/>
+                    <col style="width:5%"/>
                     <col style="width:8%"/>
                     <col style="width:8%"/>
                     <col style="width:15%"/>
                 </colgroup>
                 <thead class="text-center">
                   <tr>
-                    <th class="border border-dark"><strong>Marca</strong></th>
-                    <th class="border border-dark"><strong>Modelo</strong></th>
-                    <th class="border border-dark"><strong>N/S</strong></th>
-                    <th class="border border-dark"><strong>Asignado</strong></th>
-                    <th class="border border-dark"><strong>Area</strong></th>
-                    <th class="border border-dark"><strong>Procesador</strong></th>
-                    <th class="border border-dark"><strong>RAM</strong></th>
-                    <th class="border border-dark"><strong>HD</strong></th>
-                    <th class="border border-dark"><strong>Plataforma</strong></th>
-                    <th class="border border-dark"><strong>SO</strong></th>
-                    <th class="border border-dark"><strong>IP</strong></th>
-                    <th class="border border-dark"><strong>Firma</strong></th>
+                        <th class="border border-dark"><strong>No.</strong></th>
+                        <th class="border border-dark"><strong>Marca</strong></th>
+                        <th class="border border-dark"><strong>Modelo</strong></th>
+                        <th class="border border-dark"><strong>N/S</strong></th>
+                        <th class="border border-dark"><strong>Asignado</strong></th>
+                        <th class="border border-dark"><strong>Area</strong></th>
+                        <th class="border border-dark"><strong>Procesador</strong></th>
+                        <th class="border border-dark"><strong>RAM</strong></th>
+                        <th class="border border-dark"><strong>HD</strong></th>
+                        <th class="border border-dark"><strong>Plataforma</strong></th>
+                        <th class="border border-dark"><strong>SO</strong></th>
+                        <th class="border border-dark"><strong>IP</strong></th>
+                        <th class="border border-dark"><strong>Firma</strong></th>
                   </tr>
 
                 </thead>
 
               <tbody class="text-center">
-                 <t t-set="equipment" t-value=""/>
-                  <t t-foreach="docs" t-as="o">
-                      <tr  class="text-left" t-if="equipment!=o.category_id">
-                      <td colspan="12" class="border border-dark bg-primary"><span t-field="o.category_id"/></td>
+                  <t t-set="equipment" t-value=""/>
+                    <t t-set="num" t-value="0"/>
+                        <t t-foreach="docs" t-as="o">
+                            <t t-set="num" t-value="num+1"/>
+                            <tr class="text-left" t-if="equipment!=o.category_id">
+                                <td colspan="13" class="border border-dark bg-primary"><span t-field="o.category_id"/></td>
                       </tr>
 
                       <tr>
-
+                        <td class="border border-dark"><span t-esc="num"/></td>
                         <td class="border border-dark"><span t-esc="o.name.split(' ')[0]"/> </td>
                         <td class="border border-dark"><span t-field="o.model"/> </td>
                         <td class="border border-dark"><span t-field="o.serial_no"/> </td>
                         <td class="border border-dark"><span t-field="o.employee_id"/> </td>
                         <td class="border border-dark"><span t-field="o.department_id"/> </td>
-                        <td class="border border-dark"><span t-field="o.description_processor"/> </td>
-                        <td class="border border-dark"><span t-field="o.ram_memory"/> </td>
-                        <td class="border border-dark"><span t-field="o.storage_hdd"/> </td>
-                        <td class="border border-dark"><span t-field="o.architecture"/> </td>
-                        <td class="border border-dark"><span t-field="o.system_operative"/> </td>
-                        <td class="border border-dark"><span t-field="o.ip_address"/> </td>
+                     <td class="border border-dark">
+                          <span t-if="o.description_processor" t-field="o.description_processor"/>
+                            <span t-else="">N/A</span>
+                        </td>
+                        <td class="border border-dark">
+                            <span t-if="o.ram_memory" t-field="o.ram_memory"/>
+                            <span t-else="">N/A</span>
+                        </td>
+                        <td class="border border-dark">
+                          <span t-if="o.storage_hdd" t-field="o.storage_hdd"/>
+                            <span t-else="">N/A</span>
+                        </td>
+                        <td class="border border-dark">
+                          <span t-if="o.architecture" t-field="o.architecture"/>
+                            <span t-else="">N/A</span>
+                        </td>
+                         <td class="border border-dark">
+                          <span t-if="o.system_operative" t-field="o.system_operative"/>
+                            <span t-else="">N/A</span>
+                        </td>
+                         <td class="border border-dark">
+                          <span t-if="o.ip_address" t-field="o.ip_address"/>
+                            <span t-else="">N/A</span>
+                        </td>
                         <td class="border border-dark"></td>
                       </tr>
                       <t t-set="equipment" t-value="o.category_id"/>
@@ -117,6 +138,8 @@
                 </tbody>
             </table>
             </div>
+
+               <div id="footer" class="footer"></div>
           </div>
         </t>
     </template>

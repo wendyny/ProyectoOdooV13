@@ -56,6 +56,7 @@
                             <field name="date_order"/>
                             <field name="equipment_id"/>
                              <field name="user_id" readonly="1"/>
+                             <field name="accessories_equipment"/>
                         </group>
                         <group>
                             <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>

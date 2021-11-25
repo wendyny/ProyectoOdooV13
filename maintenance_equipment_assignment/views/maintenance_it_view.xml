@@ -41,7 +41,7 @@
         <field name="arch" type="xml">
             <form string="Assignment Equipment">
                 <header>
-                    <button string="Confirm" name="button_done" type="object" states="done"/>
+                    <button string="Confirm" name="button_done" type="object" states="draft"/>
                     <field name="state" widget="statusbar"/>
                 </header>
                 <sheet>
@@ -55,8 +55,9 @@
                         <group>
                             <field name="assignment_type" />
                             <field name="user_id" readonly="1"/>
-                             <field name="date_order" />
+                            <field name="date_order" />
                             <field name="equipment_id" />
+                            <field name="authorization_exit"/>
                         </group>
                         <group>
                             <field name="company_id" groups="base.group_multi_company" />

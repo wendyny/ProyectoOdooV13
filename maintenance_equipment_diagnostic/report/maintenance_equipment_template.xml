@@ -128,15 +128,29 @@
           </tr>
           <tr>
               <td scope="col"><strong> Procesador: </strong></td>
-              <td scope="col"><span t-field="o.equipment_id.description_processor"/> </td>
+              <td scope="col"><span t-if="o.equipment_id.description_processor"
+                                    t-field="o.equipment_id.description_processor"/>
+                            <span t-else="">N/A</span></td>
              <td scope="col"><strong> Sistema Operativo: </strong></td>
-             <td scope="col"><span t-field="o.equipment_id.system_operative"/> </td>
+             <td scope="col"><span t-if="o.equipment_id.system_operative"
+                                    t-field="o.equipment_id.system_operative"/>
+                            <span t-else="">N/A</span></td>
           </tr>
           <tr>
             <td scope="col"><strong> Memoria RAM: </strong></td>
-            <td scope="col"><span t-field="o.equipment_id.ram_memory"/> </td>
+            <td scope="col"><span t-if="o.equipment_id.ram_memory"
+                                    t-field="o.equipment_id.ram_memory"/>
+                            <span t-else="">N/A</span></td>
             <td scope="col"><strong> Disco duro: </strong></td>
-            <td scope="col"><span t-field="o.equipment_id.storage_hdd"/> </td>
+            <td scope="col"><span t-if="o.equipment_id.storage_hdd"
+                                    t-field="o.equipment_id.storage_hdd"/>
+                            <span t-else="">N/A</span></td>
+          </tr>
+          <tr>
+              <td scope="col"><strong> Accesorios y componentes adicionales: </strong></td>
+              <td colspan="3" class="text-center"><span t-if="o.accessories_equipment"
+                                    t-field="o.accessories_equipment"/>
+                            <span t-else="">N/A</span> </td>
           </tr>
           <tr>
           <td colspan = "4"><strong> Causa de solicitud de servicio:</strong></td>
@@ -176,14 +190,6 @@
                         <strong> Solicitante</strong>
                     </div>
                 </div>
-                <div class="text-center mt-3">
-                    <div t-if="report_type == 'pdf'">
-                        Page:
-                        <span class="page"/>
-                        /
-                        <span class="topage"/>
-                    </div>
-                </div>
             </div>
 
 
@@ -200,8 +206,7 @@
     <template id="report_diagnostic_equipment">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="o">
-                <t t-call="maintenance_equipment_diagnostic.report_diagnostic_equipment_document"
-                   t-lang="o.partner_id.lang"/>
+                <t t-call="maintenance_equipment_diagnostic.report_diagnostic_equipment_document"/>
             </t>
         </t>
     </template>
