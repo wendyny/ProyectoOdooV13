@@ -144,7 +144,6 @@
                         me responsabilizo a pagar el costo de reposición del equipo según el tiempo de depreciación.
                     </h5>
                     <br/>
-
                    <t t-set="foo" t-value=" ' '.replace(' ',u'\xa0').encode('utf-8') "/>
                     <h5 class="text-justify">Está autorizado para sacar este equipo de plastinova:
                         <strong>
@@ -218,6 +217,7 @@
                             </tbody>
                         </table>
                     </div>
+                    <br/>
                     <br/>
                     <br/>
                     <h5 class="text-justify">
@@ -388,7 +388,7 @@
                             <span t-else="">N/A</span></td>
           </tr>
           <tr>
-            <td scope="col"><strong> Disco duro: </strong></td>
+            <td scope="col"><strong> Disco Duro: </strong></td>
             <td scope="col"><span t-if="o.equipment_id.storage_hdd"
                                     t-field="o.equipment_id.storage_hdd"/>
                             <span t-else="">N/A</span></td>
