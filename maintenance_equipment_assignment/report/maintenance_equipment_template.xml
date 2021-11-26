@@ -2,7 +2,6 @@
 <odoo>
 
     <template id="report_assignment_equipment_1_document">
-        <t t-name="maintenance_equipment_assignment.report_assignment_equipment_1_document">
         <t t-set="iso_code" t-value="'F-457'"/>
         <t t-set="iso_revi" t-value="'01'"/>
         <t t-set="iso_date" t-value="'29.02.2017'"/>
@@ -446,221 +445,225 @@
         <div id="header" class="header mt-0 pt-0">
 
             <h2 class="text-center">Checklist Entrega de Equipo de Cómputo</h2>
-
-                        <table class="table table-sm o_main_table border border-dark">
-                            <colgroup>
-                                <col style="width:80%"/>
-                                <col style="width:20%"/>
-                            </colgroup>
-                            <theader>
-                              <th class="text-center bg-primary">Descripción de Actividad</th>
-                              <th class="text-center bg-primary">Verificación</th>
-                            </theader>
-                            <tbody>
-                                <tr>
-                                  <td class="text-left">
-                                   1. Registro en el Inventario del Equipo Informático.
-                                  </td>
-                                  <td class="border border-dark"/>
-                                </tr>
-                                 <tr>
-                                  <td class="text-left">
-                                  2. Configurar cuenta Local (IT).
-                                  </td>
-                                  <td class="border border-dark"/>
-                                </tr>
-                                <tr>
-                                  <td class="text-left">
-                                  3. Equipo Ingresado al Dominio.
-                                  </td>
-                                  <td class="border border-dark"/>
-                                </tr>
-
-                                <tr>
-                                  <td class="text-left">
-                                  4. Sistema Operativo Actualizado.
-                                  </td>
-                                  <td class="border border-dark"/>
-                                </tr>
-
-                                <tr>
-                                  <td class="text-left">
-                                  5. Registro de IP en el Microtik (LAN) con su respectivo comentario.
-                                  </td>
-                                  <td class="border border-dark"/>
-                                </tr>
-                                <tr>
-                                  <td class="text-left">
-                                  6. Registro de IP en el Microtik (WAN) Redes Wifi  con su respectivo comentario.
-                                  </td>
-                                  <td class="border border-dark"/>
-                                </tr>
-                                <tr>
-                                  <td class="text-left">
-                                  7. CInstalación del Emuladora para Sistema IGSA.
-                                  </td>
-                                  <td class="border border-dark"/>
-                                </tr>
-
-                                <tr>
-                                  <td class="text-left">
-                                  8.  Instalación y configuración de Impresora Compartida Matricial con Sistema IGSA.
-                                  </td>
-                                  <td class="border border-dark"/>
-                                </tr>
-
-                                <tr>
-                                  <td class="text-left">
-                                  9. Instalación de INFOR.
-                                  </td>
-                                  <td class="border border-dark"/>
-                                </tr>
-
-                                <tr>
-                                  <td class="text-left">
-                                  10. Crear cuenta de correo electrónico en el servidor y registro en archivo de excel.
-                                  </td>
-                                  <td class="border border-dark"/>
-                                </tr>
-
-                                <tr>
-                                  <td class="text-left">
-                                  11. Configuración de Cuenta de Correo Electrónico en la cuenta del usuario.
-                                  </td>
-                                  <td class="border border-dark"/>
-                                </tr>
-
-                                <tr>
-                                  <td class="text-left">
-                                  12. Incluir Archivo de Correo Electrónico Anterior o de Otro Usuario.
-                                  </td>
-                                  <td class="border border-dark"/>
-                                </tr>
-
-                                <tr>
-                                  <td class="text-left">
-                                  13. Configuración de Firma de Correo.
-                                  </td>
-                                  <td class="border border-dark"/>
-                                </tr>
-
-                                <tr>
-                                  <td class="text-left">
-                                  14. Archivo de correo Indizado.
-                                  </td>
-                                  <td class="border border-dark"/>
-                                </tr>
-
-                                <tr>
-                                  <td class="text-left">
-                                  15. Configuración de Reenviador  automático desde el servidor de correos.
-                                  </td>
-                                  <td class="border border-dark"/>
-                                </tr>
-
-                                <tr height="60px">
-                                  <td class="text-left">
-                                  16.  Sistemas de Plastinova Instalados:
-                                  </td>
-                                  <td class="border border-dark"/>
-                                </tr>
-
-                                <tr>
-                                  <td class="text-left">
-                                  17. Instalación de Runtine de Crystal Report.
-                                  </td>
-                                  <td class="border border-dark"/>
-                                </tr>
-
-                                <tr height="100px">
-                                  <td class="text-left">
-                                  18. Programas de Ofimática y Utilitarios Instalados.
-                                  </td>
-                                  <td class="border border-dark"/>
-                                </tr>
-                                <tr>
-                                  <td class="text-left">
-                                  19. Instalación de la Fuente para Código de Barra
-                                  </td>
-                                  <td class="border border-dark"/>
-                                </tr>
-                                  <tr>
-                                  <td class="text-left">
-                                  20. Configuración de la Región (Honduras) en el panel de control.
-                                  </td>
-                                  <td class="border border-dark"/>
-                                </tr>
-                                <tr>
-                                  <td class="text-left">
-                                  21.  Configuración de la Moneda (Lempira) en el panel de Control.
-                                  </td>
-                                  <td class="border border-dark"/>
-                                </tr>
-                                 <tr>
-                                  <td class="text-left">
-                                  22.  Configuración de Formato de fecha (dd/MM/yyyy) en el panel de control.
-                                  </td>
-                                  <td class="border border-dark"/>
-                                </tr>
-                                  <tr>
-                                  <td class="text-left">
-                                  23.  Instalación y Configuración de VNC (probado con la cuenta del usuario).
-                                  </td>
-                                  <td class="border border-dark"/>
-                                </tr>
-                                  <tr>
-                                  <td class="text-left">
-                                  24. Instalacion y configuracion de Synology (Portatiles).
-                                  </td>
-                                  <td class="border border-dark"/>
-                                </tr>
-                                 <tr>
-                                  <td class="text-left">
-                                  25. Total de GB de la copia de seguridad de Equipo anterior.
-                                  </td>
-                                  <td class="border border-dark"/>
-                                </tr>
-                                 <tr height="130px">
-                                  <td class="text-left">
-                                  26. Carpetas Compartidas Agregadas.
-                                  </td>
-                                  <td class="border border-dark"/>
-                                </tr>
-                                 <tr>
-                                  <td class="text-left">
-                                  27. Capacitar al usuario en el uso del Backup en la Nube (Synology)
-                                  </td>
-                                  <td class="border border-dark"/>
-                                </tr>
-                                 <tr>
-                                  <td class="text-left">
-                                  28. Hoja firmada de Asignación de Equipo.
-                                  </td>
-                                  <td class="border border-dark"/>
-                                </tr>
-                                <tr>
-                                  <td class="text-left">
-                                  29. Hoja Firmada de Responsiva de Equipo.
-                                  </td>
-                                  <td class="border border-dark"/>
-                                </tr>
-                                 <tr>
-                                  <td class="text-left">
-                                  30. Agregar conexion VPN.
-                                  </td>
-                                  <td class="border border-dark"/>
-                                </tr>
-
-                            </tbody>
-                        </table>
                 </div>
         <t t-call="web.external_layout">
             <div class="page">
                 <div class="oe_structure"/>
-                <div>
+               <table class="table table-sm o_main_table border border-dark">
+                            <colgroup>
+                                <col style="width:15%"/>
+                                <col style="width:85%"/>
+                            </colgroup>
+                            <theader>
+                              <th class="text-center bg-primary">Verificación</th>
+                              <th class="text-center bg-primary">Descripción de Actividad</th>
+                            </theader>
+                            <tbody>
+                                <tr>
+                                  <td class="border border-dark"/>
+                                  <td class="text-left">
+                                   1. Registro en el Inventario del Equipo Informático.
+                                  </td>
+                                </tr>
+                                 <tr>
+                                  <td class="border border-dark"/>
+                                  <td class="text-left">
+                                  2. Configurar cuenta Local (IT).
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="border border-dark"/>
+                                  <td class="text-left">
+                                  3. Equipo Ingresado al Dominio.
+                                  </td>
+                                </tr>
 
+                                <tr>
+                                  <td class="border border-dark"/>
+                                  <td class="text-left">
+                                  4. Sistema Operativo Actualizado.
+                                  </td>
+                                </tr>
+                                <tr>
+                                   <td class="border border-dark"/>
+                                  <td class="text-left">
+                                  5. Registro de IP en el Microtik (LAN) con su respectivo comentario.
+                                  </td>
 
-                </div>
+                                </tr>
+                                <tr>
+                                  <td class="border border-dark"/>
+                                  <td class="text-left">
+                                  6. Registro de IP en el Microtik (WAN) Redes Wifi  con su respectivo comentario.
+                                  </td>
+
+                                </tr>
+                                <tr>
+                                  <td class="border border-dark"/>
+                                  <td class="text-left">
+                                  7. CInstalación del Emuladora para Sistema IGSA.
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td class="border border-dark"/>
+                                  <td class="text-left">
+                                  8.  Instalación y configuración de Impresora Compartida Matricial con Sistema IGSA.
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                   <td class="border border-dark"/>
+                                   <td class="text-left">
+                                  9. Instalación de INFOR.
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                   <td class="border border-dark"/>
+                                  <td class="text-left">
+                                  10. Crear cuenta de correo electrónico en el servidor y registro en archivo de excel.
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td class="border border-dark"/>
+                                  <td class="text-left">
+                                  11. Configuración de Cuenta de Correo Electrónico en la cuenta del usuario.
+                                  </td>
+
+                                </tr>
+
+                                <tr>
+                                   <td class="border border-dark"/>
+                                  <td class="text-left">
+                                  12. Incluir Archivo de Correo Electrónico Anterior o de Otro Usuario.
+                                  </td>
+
+                                </tr>
+
+                                <tr>
+                                  <td class="border border-dark"/>
+                                  <td class="text-left">
+                                  13. Configuración de Firma de Correo.
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td class="border border-dark"/>
+                                  <td class="text-left">
+                                  14. Archivo de correo Indizado.
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                   <td class="border border-dark"/>
+                                  <td class="text-left">
+                                  15. Configuración de Reenviador  automático desde el servidor de correos.
+                                  </td>
+                                </tr>
+
+                                <tr height="60px">
+                                  <td class="border border-dark"/>
+                                  <td class="text-left">
+                                  16.  Sistemas de Plastinova Instalados:
+                                  </td>
+
+                                </tr>
+
+                                <tr>
+                                  <td class="border border-dark"/>
+                                  <td class="text-left">
+                                  17. Instalación de Runtine de Crystal Report.
+                                  </td>
+                                </tr>
+
+                                <tr height="100px">
+                                  <td class="border border-dark"/>
+                                  <td class="text-left">
+                                  18. Programas de Ofimática y Utilitarios Instalados:
+                                  </td>
+
+                                </tr>
+                                <tr>
+                                  <td class="border border-dark"/>
+                                  <td class="text-left">
+                                  19. Instalación de la Fuente para Código de Barra
+                                  </td>
+
+                                </tr>
+                                  <tr>
+                                  <td class="border border-dark"/>
+                                  <td class="text-left">
+                                  20. Configuración de la Región (Honduras) en el panel de control.
+                                  </td>
+
+                                </tr>
+                                <tr>
+                                  <td class="border border-dark"/>
+                                  <td class="text-left">
+                                  21.  Configuración de la Moneda (Lempira) en el panel de Control.
+                                  </td>
+                                </tr>
+                                 <tr>
+                                  <td class="border border-dark"/>
+                                  <td class="text-left">
+                                  22.  Configuración de Formato de fecha (dd/MM/yyyy) en el panel de control.
+                                  </td>
+
+                                </tr>
+                                  <tr>
+                                    <td class="border border-dark"/>
+                                  <td class="text-left">
+                                  23.  Instalación y Configuración de VNC (probado con la cuenta del usuario).
+                                  </td>
+
+                                </tr>
+                                 <tr>
+                                  <td class="border border-dark"/>
+                                  <td class="text-left">
+                                  24. Total de GB de la copia de seguridad de Equipo anterior.
+                                  </td>
+
+                                </tr>
+
+                                 <tr height="130px">
+                                   <td class="border border-dark"/>
+                                  <td class="text-left">
+                                  25. Carpetas Compartidas Agregadas:
+                                  </td>
+
+                                </tr>
+                                 <tr>
+                                    <td class="border border-dark"/>
+                                  <td class="text-left">
+                                  26. Capacitar al usuario en el uso del Backup en la Nube (Synology)
+                                  </td>
+
+                                </tr>
+                                 <tr>
+                                   <td class="border border-dark"/>
+                                  <td class="text-left">
+                                  27. Hoja firmada de Asignación de Equipo.
+                                  </td>
+
+                                </tr>
+                                <tr>
+                                  <td class="border border-dark"/>
+                                  <td class="text-left">
+                                  28. Hoja Firmada de Responsiva de Equipo.
+                                  </td>
+
+                                </tr>
+                                 <tr>
+                                   <td class="border border-dark"/>
+                                  <td class="text-left">
+                                  29. Agregar conexion VPN.
+                                  </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
                 <div class="oe_structure"/>
             </div>
             <div id="footer" class="footer"/>
