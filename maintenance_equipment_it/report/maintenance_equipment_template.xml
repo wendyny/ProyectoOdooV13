@@ -117,15 +117,7 @@
                             <td colspan="2" class="text-center"><span t-if="o.ip_address" t-field="o.ip_address"/>
                             <span t-else="">N/A</span></td>
                           </tr>
-                          <tr>
-                             <td class="text-center"><strong>Sistema operativo</strong></td>
-                            <td colspan="2" class="text-center"><span t-if="o.system_operative" t-field="o.system_operative"/>
-                            <span t-else="">N/A</span></td>
 
-                            <td class="text-center"><strong>Dirección IP</strong></td>
-                            <td colspan="2" class="text-center"><span t-if="o.ip_address" t-field="o.ip_address"/>
-                            <span t-else="">N/A</span></td>
-                          </tr>
                           <tr>
                              <td class="text-center"><strong>Sistema de respado</strong></td>
                             <td colspan="2" class="text-center"><span t-if="o.active_backup">Sí</span>
