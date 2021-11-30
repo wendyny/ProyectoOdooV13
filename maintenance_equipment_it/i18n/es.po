@@ -353,7 +353,7 @@ msgstr "Sistema operativo"
 #. module: maintenance_equipment_it
 #: model:ir.model.fields.selection,name:maintenance_equipment_it.selection__maintenance_equipment__state_warranty__valid
 msgid "VALID"
-msgstr "Válido"
+msgstr "Vigente"
 
 #. module: maintenance_equipment_it
 #: model:ir.model,name:maintenance_equipment_it.model_maintenance_equipment_it_report_resume_wizard

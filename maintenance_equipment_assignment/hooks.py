@@ -35,6 +35,7 @@ def post_init_hook(cr, registry):
                     'employee_id': employee_id,
                     'reason_assignment': 'Asignación inicial',
                     'origin_assignment': 'IT',
+                    'authorization_exit': equipment.authorization_exit,
                     'state': 'done'
                 }
             )
