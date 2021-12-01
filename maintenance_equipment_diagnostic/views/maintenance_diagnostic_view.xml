@@ -65,9 +65,12 @@
                             <field name="parent_employee_id"/>
                         </group>
                     </group>
-                    <field name='reason_diagnostic' placeholder="Cause of service request ......."/>
-                    <field name='description_diagnostic' placeholder="Description of the equipment diagnostic......"/>
-                    <field name='suggestion_diagnostic' placeholder=" Suggestions......"/>
+                    <label for ="reason_diagnostic'" string="Cause of service request" />
+                    <field name='reason_diagnostic'/>
+                    <label for ="description_diagnostic" string="Description of the equipment diagnostic" />
+                    <field name='description_diagnostic' />
+                    <label for ="suggestion_diagnostic" string="Suggestions" />
+                    <field name='suggestion_diagnostic'/>
                 </sheet>
                 <div class="oe_chatter">
                     <field name="message_follower_ids" widget="mail_followers"/>
@@ -103,4 +106,21 @@
                 </search>
             </field>
         </record>
+    <record id="maintenance_diagnostic_action" model="ir.actions.act_window">
+        <field name="name">Maintenance Diagnostic</field>
+        <field name="res_model">maintenance.equipment.diagnostic</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Add a new stage in the maintenance diagnostic
+          </p>
+        </field>
+    </record>
+
+
+    <menuitem action="maintenance_diagnostic_action"
+              id="menu_m_operations_equipment_diagnostic"
+              parent="maintenance_equipment_it.menu_m_operations_equipment"
+              sequence="4"
+              />
 </odoo>

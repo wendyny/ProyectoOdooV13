@@ -28,6 +28,7 @@
     <menuitem action="action_maintenance_equipment_resume_wizard"
               id="menu_m_reports_resume_wizard"
               parent="maintenance.maintenance_reporting"
+              groups="base.group_system"
               sequence="2"
               />
 

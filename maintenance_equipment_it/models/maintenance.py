@@ -24,8 +24,7 @@ class MaintenanceEquipment(models.Model):
     architecture = fields.Selection([
         ('32', '32 bits'),
         ('64', '64 bits')],
-        string='Architecture Equipment',  index=True, copy=True,
-        default='32')
+        string='Architecture Equipment',  index=True, copy=True)
 
     ip_address = fields.Char('IP Address', copy=True)
     storage_hdd = fields.Char('Storage HDD', copy=True)
@@ -41,7 +40,7 @@ class MaintenanceEquipment(models.Model):
     authorization_exit = fields.Boolean('Authorization Exit', copy=False,
                                         default=False)
 
-    depreciation_time = fields.Float('Depreciation Time', store=True,
+    depreciation_time = fields.Float('Depreciation Months', store=True,
                                      compute='_compute_depreciation_time',
                                      inverse='_compute_depreciation_date')
     state_warranty = fields.Selection([
@@ -50,6 +49,8 @@ class MaintenanceEquipment(models.Model):
         ('obsolete', 'OBSOLETE')],
         string='State Warranty', readonly=True, index=True, store=True,
         default='none', compute='_compute_warranty_equipment')
+
+    brand = fields.Char('Brand')
 
     @api.depends('effective_date', 'warranty_date')
     def _compute_depreciation_time(self):
