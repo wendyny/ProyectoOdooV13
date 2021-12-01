@@ -2,8 +2,7 @@
 <odoo>
 
     <template id="report_diagnostic_equipment_document">
-
-    <t t-set="iso_code" t-value="'F-693'"/>
+<t t-set="iso_code" t-value="'F-693'"/>
         <t t-set="iso_revi" t-value="'01'"/>
         <t t-set="iso_date" t-value="'14/02/2020'"/>
         <t t-set="iso_name" t-value="'Diagnóstico de Equipo'"/>
@@ -110,7 +109,7 @@
           </colgroup>
           <tbody>
             <tr>
-              <td colspan="4" class="border border-dark bg-primary"><strong> Características Generales del Equipo:</strong></td>
+              <td colspan="4" class="border border-dark bg-info"><strong style="color:white"> Características Generales del Equipo:</strong></td>
           </tr>
           <tr>
               <td scope="col"><strong> Equipo: </strong></td>
@@ -118,7 +117,7 @@
           </tr>
           <tr>
               <td scope="col"><strong> Marca/ Modelo: </strong></td>
-              <td colspan="3" class="text-center border-bottom border-dark"><span t-field="o.equipment_id.name"/> </td>
+              <td colspan="3" class="text-center border-bottom border-dark"> <span t-esc="str(o.equipment_id.brand or '')+' '+str(o.equipment_id.model or '')"/> </td>
           </tr>
           <tr>
               <td scope="col"><strong> No. Serie: </strong></td>
@@ -148,19 +147,19 @@
                             <span t-else="">N/A</span> </td>
           </tr>
           <tr>
-          <td colspan="4" class="border border-dark bg-primary"><strong> Causa de solicitud de servicio:</strong></td>
+          <td colspan="4" class="border border-dark bg-info"><strong style="color:white"> Causa de solicitud de servicio:</strong></td>
           </tr>
           <tr height="80px">
             <td colspan="4"><span t-field="o.reason_diagnostic"/> </td>
           </tr>
          <tr>
-          <td colspan="4" class="border border-dark bg-primary"><strong> Descripción de la intervención del equipo:</strong></td>
+          <td colspan="4" class="border border-dark bg-info"><strong style="color:white"> Descripción de la intervención del equipo:</strong></td>
           </tr>
           <tr height="80px">
             <td colspan="4"><span t-field="o.description_diagnostic"/> </td>
           </tr>
           <tr>
-          <td colspan="4" class="border border-dark bg-primary"><strong> Conclusión/Recomendación/Solución:</strong></td>
+          <td colspan="4" class="border border-dark bg-info"><strong style="color:white"> Conclusión/Recomendación/Solución:</strong></td>
           </tr>
           <tr height="80px">
             <td colspan="4"><span t-field="o.suggestion_diagnostic"/> </td>
@@ -187,9 +186,14 @@
                 </div>
             </div>
 
+
+
+
+
                 <div class="oe_structure"/>
             </div>
             <div id="footer" class="footer"/>
+
      </t>
     </template>
 

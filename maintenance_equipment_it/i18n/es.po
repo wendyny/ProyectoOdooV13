@@ -153,6 +153,12 @@ msgid "BAD"
 msgstr "Malo"
 
 #. module: maintenance_equipment_it
+#: model:ir.model.fields,field_description:maintenance_equipment_it.field_maintenance_equipment__brand
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.hr_equipment_view_search_inherit
+msgid "Brand"
+msgstr "Marca"
+
+#. module: maintenance_equipment_it
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.maintenance_equipment_resume_wizard_form
 msgid "Cancelar"
 msgstr ""
@@ -195,7 +201,7 @@ msgstr "Información del equipo"
 #. module: maintenance_equipment_it
 #: model:ir.model.fields,field_description:maintenance_equipment_it.field_maintenance_equipment__depreciation_time
 msgid "Depreciation Time"
-msgstr "Tiempo de depreciación"
+msgstr "Meses de depreciación"
 
 #. module: maintenance_equipment_it
 #: model:ir.model.fields,field_description:maintenance_equipment_it.field_maintenance_equipment__description_processor

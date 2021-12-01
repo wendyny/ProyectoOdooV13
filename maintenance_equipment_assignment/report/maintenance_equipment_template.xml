@@ -78,7 +78,7 @@
                                         <strong>Marca</strong>
                                     </th>
                                     <td class="text-left border border-dark">
-                                       <span t-esc="o.equipment_id.name"/>
+                                       <span t-esc="str(o.equipment_id.brand or '')+' '+str(o.equipment_id.model or '')"/>
                                     </td>
                                 </tr>
                                 <tr class="text-left">
@@ -112,8 +112,8 @@
                                         <strong>Tiempo de depreciación</strong>
                                     </th>
                                     <td class="text-left border border-dark">
-                                        <span t-field="o.equipment_id.depreciation_time"/>
-                                        <span>( Meses )</span>
+                                        <span t-field="o.equipment_id.depreciation_time"  t-options="{'widget': 'float','precision':0}"/>
+                                                                <span> meses </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -293,7 +293,7 @@
             </div>
 
        <div class="border border-dark bg-info">
-         <strong>Información del usuario: </strong>
+         <strong style="color:white">Información del usuario: </strong>
        </div>
       <div id="informations">
        <table class="table table-sm o_main_table">
@@ -328,22 +328,24 @@
       </div>
          <br/>
       <div class="border border-dark bg-info">
-         <strong>Descripción del equipo:</strong>
+         <strong style="color:white">Descripción del equipo:</strong>
        </div>
         <div id="Informations_Equipment">
         <table class="table table-sm o_main_table">
             <colgroup>
-              <col span="3" style="width:10%"/>
+              <col span="4" style="width:10%"/>
           </colgroup>
             <tbody class="text-center">
               <tr class="text-center">
                 <td scope="col"><strong>Categoría</strong></td>
                 <td scope="col"><strong>Marca</strong></td>
+                <td scope="col"><strong>Modelo</strong></td>
                 <td scope="col"><strong>No. Serie</strong></td>
               </tr>
             <tr>
               <td scope="col"><span t-field="o.equipment_id.category_id"/></td>
-              <td scope="col"><span t-field="o.equipment_id.name"/></td>
+              <td scope="col"><span t-field="o.equipment_id.brand"/></td>
+              <td scope="col"><span t-field="o.equipment_id.model"/></td>
               <td scope="col"><span t-field="o.equipment_id.serial_no"/></td>
             </tr>
             </tbody>
@@ -364,7 +366,7 @@
               <td><span t-if="o.equipment_id.cod_inventory" t-field="o.equipment_id.cod_inventory"/>
                                        <span t-else="">N/D</span></td>
               <td rowspan="5">
-                    <img class="mx-5 border border-dark" t-if="o.equipment_id.image_equipment" t-att-src="image_data_uri(o.equipment_id.image_equipment)" style="float:right; height:120pt;width:100"/>
+                    <img class="mx-5 border" t-if="o.equipment_id.image_equipment" t-att-src="image_data_uri(o.equipment_id.image_equipment)" style="float:right; height:120pt;width:100"/>
               </td>
           </tr>
           <tr>
@@ -388,19 +390,19 @@
                             <span t-else="">N/A</span></td>
           </tr>
           <tr class="border border-dark bg-info">
-          <td colspan="3" class="border border-dark bg-info"><strong> Causa de solicitud de equipo:</strong></td>
+          <td colspan="3" class="border border-dark bg-info"><strong style="color:white"> Causa de solicitud de equipo:</strong></td>
           </tr>
           <tr height="80px">
             <td colspan="3"><span t-field="o.reason_assignment"/> </td>
           </tr>
          <tr>
-          <td colspan="3" class="border border-dark bg-info"><strong> Procedencia del equipo:</strong></td>
+          <td colspan="3" class="border border-dark bg-info"><strong style="color:white"> Procedencia del equipo:</strong></td>
           </tr>
           <tr height="80px">
             <td colspan="3"><span t-field="o.origin_assignment"/> </td>
           </tr>
           <tr>
-          <td colspan="3" class="border border-dark bg-info"><strong> Observaciones:</strong></td>
+          <td colspan="3" class="border border-dark bg-info"><strong style="color:white"> Observaciones:</strong></td>
           </tr>
           <tr height="80px">
             <td colspan="3"><span t-field="o.notes_assignment"/> </td>
@@ -410,14 +412,18 @@
         </div>
         <br/>
 
-<div id="footer" class="footer">
+ <div id="footer" class="footer">
                 <div id="firms" class="row text-center mt-5 last-page">
-                    <div class="col-6 bm-2 text-center">
+                    <div class="col-4 bm-2 text-center">
                         <div style="border-bottom: 1px solid black;"/>
-                        <strong> Nombre y Firma IT </strong>
+                        <strong> Representante IT </strong>
+                    </div>
+                     <div class="col-4 bm-2 text-center">
+                        <div style="border-bottom: 1px solid black;"/>
+                        <strong> Aprobado por Jefe IT </strong>
                     </div>
 
-                    <div class="col-6 bm-2 text-center">
+                    <div class="col-4 bm-2 text-center">
                         <div style="border-bottom: 1px solid black;"/>
                         <strong> Usuario</strong>
                     </div>

@@ -85,7 +85,10 @@ class MaintenanceAssignment(models.Model):
     notes_assignment = fields.Text('Notes of Assignment',
                                    states=READONLY_STATES)
     authorization_exit = fields.Boolean('Authorization Exit', copy=False,
-                                        default=False, states=READONLY_STATES)
+                                        default=False, states=READONLY_STATES
+                                        )
+    date_retirement = fields.Date('Date of Retirement',
+                                  states=READONLY_STATES)
 
     state = fields.Selection([
         ('draft', 'Draft'),
