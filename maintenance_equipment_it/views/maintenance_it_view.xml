@@ -33,6 +33,9 @@
             <xpath expr="//page[2]/group/group//field[@name='serial_no']" position="after">
                <field name="cod_inventory"/>
             </xpath>
+             <xpath expr="//page[2]/group/group//field[@name='serial_no']" position="attributes">
+               <attribute name="required">1</attribute>
+            </xpath>
 
 
             <xpath expr="//page[3]" position="after">
