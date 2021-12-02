@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0-20210105\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-24 16:06+0000\n"
-"PO-Revision-Date: 2021-11-24 16:06+0000\n"
+"POT-Creation-Date: 2021-12-02 19:37+0000\n"
+"PO-Revision-Date: 2021-12-02 19:37+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -23,8 +23,173 @@ msgid "                  'Equipment - %s' % (object.name) "
 msgstr "                  'Equipo - %s' % (object.name) "
 
 #. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
+msgid "1. Registro en el Inventario del Equipo Informático."
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
+msgid ""
+"10. Crear cuenta de correo electrónico en el servidor y registro en archivo "
+"de excel."
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
+msgid ""
+"11. Configuración de Cuenta de Correo Electrónico en la cuenta del usuario."
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
+msgid "12. Incluir Archivo de Correo Electrónico Anterior o de Otro Usuario."
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
+msgid "13. Configuración de Firma de Correo."
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
+msgid "14. Archivo de correo Indizado."
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
+msgid ""
+"15. Configuración de Reenviador  automático desde el servidor de correos."
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
+msgid "16.  Sistemas de Plastinova Instalados:"
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
+msgid "17. Instalación de Runtine de Crystal Report."
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
+msgid "18. Programas de Ofimática y Utilitarios Instalados:"
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
+msgid "19. Instalación de la Fuente para Código de Barra"
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
+msgid "2. Configurar cuenta Local (IT)."
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
+msgid "20. Configuración de la Región (Honduras) en el panel de control."
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
+msgid "21.  Configuración de la Moneda (Lempira) en el panel de Control."
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
+msgid ""
+"22.  Configuración de Formato de fecha (dd/MM/yyyy) en el panel de control."
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
+msgid ""
+"23.  Instalación y Configuración de VNC (probado con la cuenta del usuario)."
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
+msgid "24. Total de GB de la copia de seguridad de Equipo anterior."
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
+msgid "25. Carpetas Compartidas Agregadas:"
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
+msgid "26. Capacitar al usuario en el uso del Backup en la Nube (Synology)"
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
+msgid "27. Hoja firmada de Asignación de Equipo."
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
+msgid "28. Hoja Firmada de Responsiva de Equipo."
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
+msgid "29. Agregar conexion VPN."
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
+msgid "3. Equipo Ingresado al Dominio."
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
+msgid "4. Sistema Operativo Actualizado."
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
+msgid "5. Registro de IP en el Microtik (LAN) con su respectivo comentario."
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
+msgid ""
+"6. Registro de IP en el Microtik (WAN) Redes Wifi  con su respectivo "
+"comentario."
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
+msgid "7. CInstalación del Emuladora para Sistema IGSA."
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
+msgid ""
+"8.  Instalación y configuración de Impresora Compartida Matricial con "
+"Sistema IGSA."
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
+msgid "9. Instalación de INFOR."
+msgstr ""
+
+#. module: maintenance_equipment_assignment
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_1_document
-msgid "<span>( Meses )</span>"
+msgid "<span style=\"width:50px; display:inline-block; \">Sí</span>"
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_1_document
+msgid "<span style=\"width:50px; display:inline-block;\">No</span>"
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_1_document
+msgid "<span> meses </span>"
 msgstr ""
 
 #. module: maintenance_equipment_assignment
@@ -35,6 +200,31 @@ msgstr ""
 #. module: maintenance_equipment_assignment
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_2_document
 msgid "<span>No Aprobado</span>"
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_2_document
+msgid "<strong style=\"color:white\"> Causa de solicitud de equipo:</strong>"
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_2_document
+msgid "<strong style=\"color:white\"> Observaciones:</strong>"
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_2_document
+msgid "<strong style=\"color:white\"> Procedencia del equipo:</strong>"
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_2_document
+msgid "<strong style=\"color:white\">Descripción del equipo:</strong>"
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_2_document
+msgid "<strong style=\"color:white\">Información del usuario: </strong>"
 msgstr ""
 
 #. module: maintenance_equipment_assignment
@@ -49,7 +239,7 @@ msgstr ""
 
 #. module: maintenance_equipment_assignment
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_2_document
-msgid "<strong> Causa de solicitud de equipo:</strong>"
+msgid "<strong> Aprobado por Jefe IT </strong>"
 msgstr ""
 
 #. module: maintenance_equipment_assignment
@@ -59,7 +249,7 @@ msgstr ""
 
 #. module: maintenance_equipment_assignment
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_2_document
-msgid "<strong> Disco duro: </strong>"
+msgid "<strong> Disco Duro: </strong>"
 msgstr ""
 
 #. module: maintenance_equipment_assignment
@@ -74,22 +264,12 @@ msgstr ""
 
 #. module: maintenance_equipment_assignment
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_2_document
-msgid "<strong> Nombre y Firma IT </strong>"
-msgstr ""
-
-#. module: maintenance_equipment_assignment
-#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_2_document
-msgid "<strong> Observaciones:</strong>"
-msgstr ""
-
-#. module: maintenance_equipment_assignment
-#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_2_document
-msgid "<strong> Procedencia del equipo:</strong>"
-msgstr ""
-
-#. module: maintenance_equipment_assignment
-#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_2_document
 msgid "<strong> Procesador: </strong>"
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_2_document
+msgid "<strong> Representante IT </strong>"
 msgstr ""
 
 #. module: maintenance_equipment_assignment
@@ -115,7 +295,7 @@ msgstr ""
 #. module: maintenance_equipment_assignment
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_2_document
 msgid "<strong>Categoría</strong>"
-msgstr ""
+msgstr "Categoría"
 
 #. module: maintenance_equipment_assignment
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_1_document
@@ -139,7 +319,7 @@ msgstr ""
 
 #. module: maintenance_equipment_assignment
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_1_document
-msgid "<strong>Fecha de recepcion</strong>"
+msgid "<strong>Fecha de recepción</strong>"
 msgstr ""
 
 #. module: maintenance_equipment_assignment
@@ -156,6 +336,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_1_document
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_2_document
 msgid "<strong>Marca</strong>"
+msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_2_document
+msgid "<strong>Modelo</strong>"
 msgstr ""
 
 #. module: maintenance_equipment_assignment
@@ -195,16 +380,6 @@ msgstr ""
 
 #. module: maintenance_equipment_assignment
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_2_document
-msgid "<strong>a)</strong> Información del usuario:"
-msgstr ""
-
-#. module: maintenance_equipment_assignment
-#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_2_document
-msgid "<strong>b)</strong> Descripción del equipo:"
-msgstr ""
-
-#. module: maintenance_equipment_assignment
-#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_2_document
 msgid "ASIGNACIÓN #"
 msgstr ""
 
@@ -234,6 +409,11 @@ msgid "Activity State"
 msgstr "Estado de la actividad"
 
 #. module: maintenance_equipment_assignment
+#: model_terms:ir.actions.act_window,help:maintenance_equipment_assignment.maintenance_assignment_action
+msgid "Add a new stage in the maintenance assignment"
+msgstr "Agregar una nueva etapa en la asignación de mantenimiento"
+
+#. module: maintenance_equipment_assignment
 #: model:ir.model.fields,field_description:maintenance_equipment_assignment.field_maintenance_equipment__assignment_ids
 #: model:ir.model.fields.selection,name:maintenance_equipment_assignment.selection__maintenance_equipment_assignment__assignment_type__assignment
 msgid "Assignment"
@@ -261,6 +441,19 @@ msgid "Assignment Type"
 msgstr "Tipo"
 
 #. module: maintenance_equipment_assignment
+#: model:ir.model.fields,help:maintenance_equipment_assignment.field_maintenance_equipment_assignment__assignment_type
+msgid ""
+"Assignment for new equipment.Re-assignment for existing equipment.Temporal "
+"for defined time assignments. "
+msgstr "Asignación es para equipo nuevo. Re-asignación es para equipo existente. Temporal es para equipo prestado por tiempo definido"
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.hr_equipment_assignment_view_search
+msgid "Assignment type"
+msgstr "Tipo de asignación"
+
+#. module: maintenance_equipment_assignment
+#: model:ir.model.fields,help:maintenance_equipment_assignment.field_maintenance_equipment__assignment_ids
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.hr_equipment_view_form_inherit
 msgid "Assignments"
 msgstr "Asignaciones"
@@ -292,8 +485,13 @@ msgstr ""
 
 #. module: maintenance_equipment_assignment
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.hr_equipment_assignment_view_form
-msgid "Cause of equipment request ......."
-msgstr "Causa de solicitud de equipo....."
+msgid "Cause of equipment request"
+msgstr "Causa de la solicitud de la asignación"
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
+msgid "Checklist Entrega de Equipo de Cómputo"
+msgstr ""
 
 #. module: maintenance_equipment_assignment
 #: model:ir.actions.report,name:maintenance_equipment_assignment.action_report_assignment_equipment_checklist_3
@@ -328,9 +526,18 @@ msgstr "URL del portal de cliente"
 #. module: maintenance_equipment_assignment
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_1_document
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_2_document
-#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
 msgid "Código:"
 msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model:ir.model.fields,field_description:maintenance_equipment_assignment.field_maintenance_equipment_assignment__date_retirement
+msgid "Date of Retirement"
+msgstr "Fecha de retiro"
+
+#. module: maintenance_equipment_assignment
+#: model:ir.model.fields,help:maintenance_equipment_assignment.field_maintenance_equipment_assignment__date_retirement
+msgid "Date that expires the loan of the equipment"
+msgstr "Fecha en que expira el préstamo del equipo"
 
 #. module: maintenance_equipment_assignment
 #: model:ir.model.fields,field_description:maintenance_equipment_assignment.field_maintenance_equipment_assignment__department_employee_id
@@ -339,11 +546,36 @@ msgid "Department"
 msgstr "Departamento"
 
 #. module: maintenance_equipment_assignment
+#: model:ir.model.fields,help:maintenance_equipment_assignment.field_maintenance_equipment_assignment__department_employee_id
+msgid "Department according to the employee"
+msgstr "Departamento al que pertenece el empleado"
+
+#. module: maintenance_equipment_assignment
 #: model:ir.model.fields,help:maintenance_equipment_assignment.field_maintenance_equipment_assignment__date_order
 msgid ""
-"Depicts the date where the Quotation should be validated and converted into "
-"a purchase order."
+"Depicts the date where the assignment should be validated and converted into"
+" an assignment equipment."
+msgstr "Fecha de la asignación del equipo"
+
+#. module: maintenance_equipment_assignment
+#: model:ir.model.fields,help:maintenance_equipment_assignment.field_maintenance_equipment_assignment__origin_assignment
+msgid "Describe the origin of the equipment"
+msgstr "Describa la procedencia del equipo"
+
+#. module: maintenance_equipment_assignment
+#: model:ir.model.fields,help:maintenance_equipment_assignment.field_maintenance_equipment_assignment__reason_assignment
+msgid "Describes the cause of the equipment request"
+msgstr "Describa la causa de la solictud del equipo"
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
+msgid "Descripción de Actividad"
 msgstr ""
+
+#. module: maintenance_equipment_assignment
+#: model:ir.model.fields,help:maintenance_equipment_assignment.field_maintenance_equipment_assignment__notes_assignment
+msgid "Description of the state in which the equipment is delivered"
+msgstr "Descripción del estado en que se entregará el equipo."
 
 #. module: maintenance_equipment_assignment
 #: model:ir.model.fields,field_description:maintenance_equipment_assignment.field_maintenance_equipment_assignment__display_name
@@ -365,7 +597,6 @@ msgstr "Borrador"
 #. module: maintenance_equipment_assignment
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_1_document
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_2_document
-#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
 msgid "Edición:"
 msgstr ""
 
@@ -374,6 +605,16 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.hr_equipment_assignment_view_search
 msgid "Employee"
 msgstr "Empleado"
+
+#. module: maintenance_equipment_assignment
+#: model:ir.model.fields,help:maintenance_equipment_assignment.field_maintenance_equipment_assignment__parent_employee_id
+msgid "Employee Manager"
+msgstr "Encargado"
+
+#. module: maintenance_equipment_assignment
+#: model:ir.model.fields,help:maintenance_equipment_assignment.field_maintenance_equipment_assignment__employee_id
+msgid "Employee of company"
+msgstr "Empleado de la compañía"
 
 #. module: maintenance_equipment_assignment
 #: model:ir.model.fields,field_description:maintenance_equipment_assignment.field_maintenance_equipment_assignment__equipment_id
@@ -388,7 +629,6 @@ msgstr ""
 #. module: maintenance_equipment_assignment
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_1_document
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_2_document
-#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
 msgid "Fecha:"
 msgstr ""
 
@@ -418,6 +658,11 @@ msgid "ID"
 msgstr ""
 
 #. module: maintenance_equipment_assignment
+#: model:ir.model.fields,help:maintenance_equipment_assignment.field_maintenance_equipment_assignment__equipment_id
+msgid "ID of equipment "
+msgstr "Registro del equipo"
+
+#. module: maintenance_equipment_assignment
 #: model:ir.model.fields,field_description:maintenance_equipment_assignment.field_maintenance_equipment_assignment__user_id
 msgid "IT Representative"
 msgstr "Representante de IT"
@@ -445,6 +690,11 @@ msgid "If checked, some messages have a delivery error."
 msgstr "Si se encuentra marcado, algunos mensajes tienen error de envío"
 
 #. module: maintenance_equipment_assignment
+#: model:ir.model.fields,help:maintenance_equipment_assignment.field_maintenance_equipment_assignment__authorization_exit
+msgid "If the computer has permission to leave the company"
+msgstr "El equipo está autorizado para poder salir de la compañía"
+
+#. module: maintenance_equipment_assignment
 #: model:ir.model.fields,field_description:maintenance_equipment_assignment.field_maintenance_equipment_assignment__message_is_follower
 msgid "Is Follower"
 msgstr "Es seguidor"
@@ -467,7 +717,6 @@ msgstr "Última actualización en"
 #. module: maintenance_equipment_assignment
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_1_document
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_2_document
-#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
 msgid "Logo"
 msgstr ""
 
@@ -475,6 +724,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:maintenance_equipment_assignment.field_maintenance_equipment_assignment__message_main_attachment_id
 msgid "Main Attachment"
 msgstr "Adjuntos principales"
+
+#. module: maintenance_equipment_assignment
+#: model:ir.actions.act_window,name:maintenance_equipment_assignment.maintenance_assignment_action
+#: model:ir.ui.menu,name:maintenance_equipment_assignment.menu_m_operations_equipment_assignment
+msgid "Maintenance Assignment"
+msgstr ""
 
 #. module: maintenance_equipment_assignment
 #: model:ir.model,name:maintenance_equipment_assignment.model_maintenance_equipment
@@ -497,6 +752,11 @@ msgid "Messages"
 msgstr "Mensajes"
 
 #. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_2_document
+msgid "N/A"
+msgstr ""
+
+#. module: maintenance_equipment_assignment
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_1_document
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_2_document
 msgid "N/D"
@@ -506,6 +766,16 @@ msgstr ""
 #: model:ir.model.fields,field_description:maintenance_equipment_assignment.field_maintenance_equipment_assignment__name
 msgid "Name"
 msgstr "Nombre"
+
+#. module: maintenance_equipment_assignment
+#: model:ir.model.fields,help:maintenance_equipment_assignment.field_maintenance_equipment_assignment__company_id
+msgid "Name of company"
+msgstr "Nombre de la compañía"
+
+#. module: maintenance_equipment_assignment
+#: model:ir.model.fields,help:maintenance_equipment_assignment.field_maintenance_equipment_assignment__name
+msgid "Name of equipment can be brand and model"
+msgstr "El nombre del equipo puede ser la marca y el modelo"
 
 #. module: maintenance_equipment_assignment
 #: model:ir.model.fields,field_description:maintenance_equipment_assignment.field_maintenance_equipment_assignment__activity_date_deadline
@@ -521,11 +791,6 @@ msgstr "Resumen de la siguiente actividad"
 #: model:ir.model.fields,field_description:maintenance_equipment_assignment.field_maintenance_equipment_assignment__activity_type_id
 msgid "Next Activity Type"
 msgstr "Siguiente tipo de actividad"
-
-#. module: maintenance_equipment_assignment
-#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_1_document
-msgid "No"
-msgstr ""
 
 #. module: maintenance_equipment_assignment
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_1_document
@@ -564,8 +829,8 @@ msgstr "Número de mensajes no leidos"
 
 #. module: maintenance_equipment_assignment
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.hr_equipment_assignment_view_form
-msgid "Observations ......."
-msgstr "Observaciones......"
+msgid "Observations"
+msgstr "Observaciones"
 
 #. module: maintenance_equipment_assignment
 #: model:ir.model.fields,field_description:maintenance_equipment_assignment.field_maintenance_equipment_assignment__date_order
@@ -579,18 +844,8 @@ msgid "Origin of Assignment"
 msgstr "Procedencia"
 
 #. module: maintenance_equipment_assignment
-#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_2_document
-msgid ""
-"Page:\n"
-"                        <span class=\"page\"/>\n"
-"                        /\n"
-"                        <span class=\"topage\"/>"
-msgstr ""
-
-#. module: maintenance_equipment_assignment
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_1_document
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_2_document
-#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
 msgid ""
 "Pagina:\n"
 "                        <span class=\"page\"/>\n"
@@ -671,9 +926,11 @@ msgstr ""
 "Planificada: futuras actividades."
 
 #. module: maintenance_equipment_assignment
-#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_1_document
-msgid "Sí"
-msgstr ""
+#: model:ir.model.fields,help:maintenance_equipment_assignment.field_maintenance_equipment_assignment__state
+msgid ""
+"Status of the assignment. If it is in draft you can still modify the "
+"assignment.But if it is in done you can not change."
+msgstr "Estado de la asignación. Si esta en borrador aún se puede modificar. Pero si en hecho no se puede cambiar"
 
 #. module: maintenance_equipment_assignment
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_1_document
@@ -716,6 +973,16 @@ msgid "User"
 msgstr "Usuario"
 
 #. module: maintenance_equipment_assignment
+#: model:ir.model.fields,help:maintenance_equipment_assignment.field_maintenance_equipment_assignment__user_id
+msgid "User logged in"
+msgstr "Usuario logeado"
+
+#. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_checklist_3_document
+msgid "Verificación"
+msgstr ""
+
+#. module: maintenance_equipment_assignment
 #: model:ir.model.fields,field_description:maintenance_equipment_assignment.field_maintenance_equipment_assignment__website_message_ids
 msgid "Website Messages"
 msgstr "Mensajes del sitio web"
@@ -724,3 +991,8 @@ msgstr "Mensajes del sitio web"
 #: model:ir.model.fields,help:maintenance_equipment_assignment.field_maintenance_equipment_assignment__website_message_ids
 msgid "Website communication history"
 msgstr "Historial de comunicaciones del sitio web"
+
+#. module: maintenance_equipment_assignment
+#: model:ir.model.fields,help:maintenance_equipment_assignment.field_maintenance_equipment__assignment_count
+msgid "counting of assignments"
+msgstr "Conteo de asignaciones"

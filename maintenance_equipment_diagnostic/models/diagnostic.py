@@ -28,66 +28,86 @@ class MaintenanceDiagnostic(models.Model):
     company_id = fields.Many2one('res.company',
                                  related='equipment_id.company_id',
                                  string='Company',
-                                 store=True, readonly=True)
+                                 store=True, readonly=True,
+                                 help="Name of company")
 
     name = fields.Char('Name', required=True, index=True, copy=False,
-                       default='New')
+                       default='New',
+                       help="New diagnostic")
+
     equipment_id = fields.Many2one('maintenance.equipment', 'Equipment',
-                                   required=True)
+                                   required=True, help="ID of equipment ")
 
     user_id = fields.Many2one('res.users', string='IT Representative',
                               index=True, tracking=True, readonly=True,
                               default=lambda self: self.env.user,
-                              check_company=True)
+                              check_company=True,
+                              help="User logged in")
 
     employee_id = fields.Many2one('hr.employee', string='Employee', index=True,
                                   compute='_compute_employee_data',
                                   check_company=True,
                                   required=True,
                                   store=True,
-                                  copy=True
-                                  )
+                                  copy=True,
+                                  help="Employee of company")
 
     date_order = fields.Datetime('Order Date', required=True,
                                  index=True,
                                  copy=False, default=fields.Datetime.now,
                                  states=READONLY_STATES,
-                                 help="Depicts the date where the Quotation"
+                                 help="Depicts the date where the diagnostic"
                                       " should be validated and converted into"
-                                      " a purchase order.",
-                                 )
+                                      " an diagnosed equipment.")
 
     department_employee_id = fields.Many2one('hr.department',
                                              string='Department',
                                              compute='_compute_employee_data',
                                              inverse="_compute_employee_inv",
                                              states=READONLY_STATES,
-                                             store=True)
+                                             store=True,
+                                             help="Department according to"
+                                                  " the employee")
 
     parent_employee_id = fields.Many2one('hr.employee', string='Parent',
                                          compute='_compute_employee_data',
                                          inverse="_compute_employee_inv",
                                          states=READONLY_STATES,
-                                         store=True)
+                                         store=True, help="Employee Manager")
 
     reason_diagnostic = fields.Text('Reasons of diagnostic', required=True,
-                                    states=READONLY_STATES)
+                                    states=READONLY_STATES,
+                                    help="Describes the cause of the service "
+                                         "request")
+
     description_diagnostic = fields.Text('Description of diagnostic',
                                          states=READONLY_STATES,
-                                         required=True)
+                                         required=True,
+                                         help="Describe the service "
+                                              "intervention")
+
     suggestion_diagnostic = fields.Text('Suggestions of diagnostic',
                                         states=READONLY_STATES,
-                                        required=True)
+                                        required=True,
+                                        help="Describe the suggested solution"
+                                             " to the equipment")
+
     accessories_equipment = fields.Char('Accessories_equipment',
                                         states=READONLY_STATES,
-                                        default='N/A')
+                                        default='N/A',
+                                        help="Describe the additional"
+                                             "components")
 
     state = fields.Selection([
             ('draft', 'Draft'),
             ('done', 'Done'),
             ('cancel', 'Cancel'),
             ], string='Status', readonly=True, index=True, copy=False,
-            default='draft', tracking=True)
+            default='draft', tracking=True,
+            help="Status of the assignment."
+                 "If it is in draft you can still modify the assignment."
+                 "But if it is in done you can not change.")
+
 
     def _compute_employee_inv(self):
         pass
@@ -123,12 +143,14 @@ class MaintenanceEquipment(models.Model):
 
     diagnostic_count = fields.Integer(compute="_compute_diagnostic",
                                       string='Diagnostic Count', copy=False,
-                                      default=0, store=True)
-    diagnostic_ids = fields.One2many(comodel_name='maintenance.'
-                                                  'equipment.diagnostic',
+                                      default=0, store=True,
+                                      help="counting of diagnostics")
+
+    diagnostic_ids = fields.One2many(comodel_name=
+                                     'maintenance.equipment.diagnostic',
                                      inverse_name='equipment_id',
                                      string='Assignment', copy=False,
-                                    )
+                                     help="Diagnostics")
 
     @api.depends('diagnostic_ids')
     def _compute_diagnostic(self):

@@ -30,22 +30,28 @@ class MaintenanceAssignment(models.Model):
     company_id = fields.Many2one('res.company',
                                  related='equipment_id.company_id',
                                  string='Company',
-                                 store=True, readonly=True)
+                                 store=True, readonly=True,
+                                 help="Name of company")
 
     name = fields.Char('Name', required=True, index=True, copy=False,
-                       default='New')
+                       default='New',
+                       help="Name of equipment can be brand and model")
+
     equipment_id = fields.Many2one('maintenance.equipment', 'Equipment',
                                    required=True,
-                                   states=READONLY_STATES)
+                                   states=READONLY_STATES,
+                                   help="ID of equipment ")
 
     user_id = fields.Many2one('res.users', string='IT Representative',
                               index=True, tracking=True, readonly=True,
                               default=lambda self: self.env.user,
-                              check_company=True)
+                              check_company=True,
+                              help="User logged in")
 
     employee_id = fields.Many2one('hr.employee', string='Employee', index=True,
                                   tracking=True, check_company=True,
-                                  states=READONLY_STATES, required=True)
+                                  states=READONLY_STATES, required=True,
+                                  help="Employee of company")
 
     assignment_type = fields.Selection([
         ('assignment', 'Assignment'),
@@ -53,48 +59,68 @@ class MaintenanceAssignment(models.Model):
         ('temp', 'Temporal')],
         string='Assignment Type',  index=True, copy=True,
         default='assignment', required=True,
-        tracking=True, states=READONLY_STATES
-        )
+        tracking=True, states=READONLY_STATES,
+        help="Assignment for new equipment."
+             "Re-assignment for existing equipment."
+             "Temporal for defined time assignments. ")
 
     date_order = fields.Datetime('Order Date', required=True,
                                  index=True,
                                  copy=False, default=fields.Datetime.now,
                                  states=READONLY_STATES,
-                                 help="Depicts the date where the Quotation"
+                                 help="Depicts the date where the assignment"
                                       " should be validated and converted into"
-                                      " a purchase order.",
-                                 )
+                                      " an assignment equipment.")
 
     department_employee_id = fields.Many2one('hr.department',
                                              string='Department',
                                              compute='_compute_employee_data',
                                              inverse="_compute_employee_inv",
                                              states=READONLY_STATES,
-                                             store=True)
+                                             store=True,
+                                             help="Department according to"
+                                                  " the employee")
 
     parent_employee_id = fields.Many2one('hr.employee', string='Parent',
                                          compute='_compute_employee_data',
                                          inverse="_compute_employee_inv",
                                          states=READONLY_STATES,
-                                         store=True)
+                                         store=True,
+                                         help="Employee Manager")
 
     reason_assignment = fields.Text('Reasons of Assignment', required=True,
-                                    states=READONLY_STATES)
+                                    states=READONLY_STATES,
+                                    help="Describes the cause of the equipment"
+                                         " request")
+
     origin_assignment = fields.Char('Origin of Assignment',
-                                    states=READONLY_STATES)
+                                    states=READONLY_STATES,
+                                    help="Describe the origin of the "
+                                         "equipment")
+
     notes_assignment = fields.Text('Notes of Assignment',
-                                   states=READONLY_STATES)
+                                   states=READONLY_STATES,
+                                   help="Description of the state in which the"
+                                        " equipment is delivered")
+
     authorization_exit = fields.Boolean('Authorization Exit', copy=False,
-                                        default=False, states=READONLY_STATES
-                                        )
+                                        default=False, states=READONLY_STATES,
+                                        help="If the computer has permission "
+                                             "to leave the company")
+
     date_retirement = fields.Date('Date of Retirement',
-                                  states=READONLY_STATES)
+                                  states=READONLY_STATES,
+                                  help="Date that expires the loan of the "
+                                       "equipment")
 
     state = fields.Selection([
         ('draft', 'Draft'),
         ('done', 'Done'),
         ], string='Status', readonly=True, index=True, copy=False,
-        default='draft', tracking=True)
+        default='draft', tracking=True,
+        help="Status of the assignment. "
+             "If it is in draft you can still modify the assignment."
+             "But if it is in done you can not change.")
 
     def _compute_employee_inv(self):
         pass
@@ -130,11 +156,13 @@ class MaintenanceEquipment(models.Model):
 
     assignment_count = fields.Integer(compute="_compute_assignment",
                                       string='Assignment Count', copy=False,
-                                      default=0, store=True)
+                                      default=0, store=True,
+                                      help="counting of assignments")
+
     assignment_ids = fields.One2many(comodel_name='maintenance.equipment.assignment',
                                      inverse_name='equipment_id',
                                      string='Assignment', copy=False,
-                                    )
+                                     help="Assignments")
 
     @api.depends('assignment_ids')
     def _compute_assignment(self):
