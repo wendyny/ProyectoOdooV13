@@ -19,38 +19,75 @@ class MaintenanceEquipment(models.Model):
         ('good', 'GOOD'),
         ('bad', 'BAD')],
         string='Status Equipment', readonly=True, index=True, copy=False,
-        default='good', tracking=True)
+        default='good', tracking=True,
+        help="Describes the physical condition of the equipment"
+             "You can set to: Good when it is working or"
+             " Bad when it is damaged")
 
     architecture = fields.Selection([
         ('32', '32 bits'),
         ('64', '64 bits')],
-        string='Architecture Equipment',  index=True, copy=True)
+        string='Architecture Equipment',  index=True, copy=True,
+        help="Specifies the architecture of the computer")
 
-    ip_address = fields.Char('IP Address', copy=True)
-    storage_hdd = fields.Char('Storage HDD', copy=True)
-    description_processor = fields.Char('Description Processor', copy=True)
-    system_operative = fields.Char('System Operative', copy=True)
-    ram_memory = fields.Char('RAM Memory', copy=True)
-    active_backup = fields.Boolean('Active Backup', copy=True)
-    active_vnc = fields.Boolean('Active VNC', copy=True)
-    access_network = fields.Boolean('Access Network', copy=True)
-    cod_inventory = fields.Char('Code Inventory', copy=True)
+    ip_address = fields.Char('IP Address', copy=True,
+                             help="Describes the address IP of equipment")
+
+    storage_hdd = fields.Char('Storage HDD', copy=True,
+                              help="Specifies storage capacity")
+
+    description_processor = fields.Char('Description Processor', copy=True,
+                                        help="Describes the processor of "
+                                             "equipment")
+
+    system_operative = fields.Char('System Operative', copy=True,
+                                   help="Specifies system operative installed"
+                                        "in the computer")
+
+    ram_memory = fields.Char('RAM Memory', copy=True,
+                             help="Specifies the capacity of memory ram")
+
+    active_backup = fields.Boolean('Active Backup', copy=True,
+                                   help="If the backup system is active")
+
+    active_vnc = fields.Boolean('Active VNC', copy=True,
+                                help="If the VNC is installed")
+
+    access_network = fields.Boolean('Access Network', copy=True,
+                                    help="If the equipment has access"
+                                         "to network")
+
+    cod_inventory = fields.Char('Code Inventory', copy=True,
+                                help="Code of inventory give for"
+                                     "department accounting")
+
     image_equipment = fields.Image('Image', max_width=1920, max_heigth=1920,
-                                   store=True)
+                                   store=True,
+                                   help="Image of equipment")
+
     authorization_exit = fields.Boolean('Authorization Exit', copy=False,
-                                        default=False)
+                                        default=False,
+                                        help="If the computer has permission "
+                                             "to leave the company")
 
     depreciation_time = fields.Float('Depreciation Months', store=True,
                                      compute='_compute_depreciation_time',
-                                     inverse='_compute_depreciation_date')
+                                     inverse='_compute_depreciation_date',
+                                     help="Time the equipment depreciated")
+
     state_warranty = fields.Selection([
         ('none', 'NONE'),
         ('valid', 'VALID'),
         ('obsolete', 'OBSOLETE')],
         string='State Warranty', readonly=True, index=True, store=True,
-        default='none', compute='_compute_warranty_equipment')
+        default='none', compute='_compute_warranty_equipment',
+        help="Status of the warranty. "
+             "If it is in None means do not has warranty."
+             "But if it is in Valid means is has warranty."
+             "Or Obsolete means your warranty expired")
 
-    brand = fields.Char('Brand')
+    brand = fields.Char('Brand',
+                        help="Describes the brand of equipment")
 
     @api.depends('effective_date', 'warranty_date')
     def _compute_depreciation_time(self):

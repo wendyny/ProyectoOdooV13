@@ -8,11 +8,13 @@ class EquipmentResume(models.TransientModel):
 
     company_id = fields.Many2one('res.company', 'Company', required=True,
                                  index=True,
-                                 default=lambda self: self.env.company.id)
+                                 default=lambda self: self.env.company.id,
+                                 help="Name of company")
 
     maintenance_team_id = fields.Many2one('maintenance.team',
                                           string='Maintenance Team',
-                                          check_company=True)
+                                          check_company=True,
+                                          help="Name of maintenance team")
 
     def get_report(self):
         self.ensure_one()

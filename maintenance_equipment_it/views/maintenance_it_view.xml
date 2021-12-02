@@ -35,7 +35,6 @@
             </xpath>
 
 
-
             <xpath expr="//page[3]" position="after">
                 <page string="IT INFORMATION" groups="base.group_system">
                     <group>
