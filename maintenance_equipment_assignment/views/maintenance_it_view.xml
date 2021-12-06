@@ -129,6 +129,7 @@
     <menuitem action="maintenance_assignment_action"
               id="menu_m_operations_equipment_assignment"
               parent="maintenance_equipment_it.menu_m_operations_equipment"
+              groups="maintenance_equipment_it.group_equipment_manager_it"
               sequence="4"
               />
 </odoo>
