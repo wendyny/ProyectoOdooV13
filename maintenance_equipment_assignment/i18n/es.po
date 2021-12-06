@@ -729,7 +729,7 @@ msgstr "Adjuntos principales"
 #: model:ir.actions.act_window,name:maintenance_equipment_assignment.maintenance_assignment_action
 #: model:ir.ui.menu,name:maintenance_equipment_assignment.menu_m_operations_equipment_assignment
 msgid "Maintenance Assignment"
-msgstr ""
+msgstr "Asignaciones"
 
 #. module: maintenance_equipment_assignment
 #: model:ir.model,name:maintenance_equipment_assignment.model_maintenance_equipment

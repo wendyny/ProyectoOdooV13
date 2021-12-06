@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0-20210105\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-24 17:36+0000\n"
-"PO-Revision-Date: 2021-11-24 17:36+0000\n"
+"POT-Creation-Date: 2021-12-04 15:58+0000\n"
+"PO-Revision-Date: 2021-12-04 15:58+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -32,13 +32,18 @@ msgid "64 bits"
 msgstr ""
 
 #. module: maintenance_equipment_it
-#: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_equipment_resume_document
-msgid "<strong>Area</strong>"
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_maintenance_equipment_document
+msgid "<span> meses </span>"
 msgstr ""
 
 #. module: maintenance_equipment_it
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_maintenance_equipment_document
-msgid "<strong>Asignado A</strong>"
+msgid "<strong>Acceso a internet</strong>"
+msgstr ""
+
+#. module: maintenance_equipment_it
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_equipment_resume_document
+msgid "<strong>Area</strong>"
 msgstr ""
 
 #. module: maintenance_equipment_it
@@ -48,23 +53,53 @@ msgstr ""
 
 #. module: maintenance_equipment_it
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_maintenance_equipment_document
-msgid "<strong>Categoria</strong>"
+msgid "<strong>Autorización de salida</strong>"
+msgstr ""
+
+#. module: maintenance_equipment_it
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_maintenance_equipment_document
+msgid "<strong>Categoría</strong>"
 msgstr "Categoría"
 
 #. module: maintenance_equipment_it
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_maintenance_equipment_document
-msgid "<strong>Estado de Equipo</strong>"
+msgid "<strong>Costo</strong>"
+msgstr ""
+
+#. module: maintenance_equipment_it
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_maintenance_equipment_document
+msgid "<strong>Código de inventario</strong>"
+msgstr ""
+
+#. module: maintenance_equipment_it
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_maintenance_equipment_document
+msgid "<strong>Dirección IP</strong>"
+msgstr ""
+
+#. module: maintenance_equipment_it
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_maintenance_equipment_document
+msgid "<strong>Disco duro</strong>"
+msgstr ""
+
+#. module: maintenance_equipment_it
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_maintenance_equipment_document
+msgid "<strong>Estado de la garantía</strong>"
+msgstr ""
+
+#. module: maintenance_equipment_it
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_maintenance_equipment_document
+msgid "<strong>Estado del equipo</strong>"
+msgstr ""
+
+#. module: maintenance_equipment_it
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_maintenance_equipment_document
+msgid "<strong>Fecha expiración de garantía</strong>"
 msgstr ""
 
 #. module: maintenance_equipment_it
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_equipment_resume_document
 msgid "<strong>Firma</strong>"
 msgstr ""
-
-#. module: maintenance_equipment_it
-#: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_maintenance_equipment_document
-msgid "<strong>Garantia</strong>"
-msgstr "Garantía"
 
 #. module: maintenance_equipment_it
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_equipment_resume_document
@@ -79,6 +114,11 @@ msgstr "Dirección IP"
 #. module: maintenance_equipment_it
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_equipment_resume_document
 msgid "<strong>Marca</strong>"
+msgstr ""
+
+#. module: maintenance_equipment_it
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_maintenance_equipment_document
+msgid "<strong>Memoria RAM</strong>"
 msgstr ""
 
 #. module: maintenance_equipment_it
@@ -104,11 +144,13 @@ msgstr ""
 
 #. module: maintenance_equipment_it
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_equipment_resume_document
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_maintenance_equipment_document
 msgid "<strong>Plataforma</strong>"
 msgstr ""
 
 #. module: maintenance_equipment_it
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_equipment_resume_document
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_maintenance_equipment_document
 msgid "<strong>Procesador</strong>"
 msgstr ""
 
@@ -121,6 +163,26 @@ msgstr "Memoria RAM"
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_equipment_resume_document
 msgid "<strong>SO</strong>"
 msgstr "Sistema Operativo"
+
+#. module: maintenance_equipment_it
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_maintenance_equipment_document
+msgid "<strong>Sistema de respaldo</strong>"
+msgstr ""
+
+#. module: maintenance_equipment_it
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_maintenance_equipment_document
+msgid "<strong>Sistema operativo</strong>"
+msgstr ""
+
+#. module: maintenance_equipment_it
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_maintenance_equipment_document
+msgid "<strong>Tiempo de depreciación</strong>"
+msgstr ""
+
+#. module: maintenance_equipment_it
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_maintenance_equipment_document
+msgid "<strong>VNC instalado</strong>"
+msgstr ""
 
 #. module: maintenance_equipment_it
 #: model:ir.model.fields,field_description:maintenance_equipment_it.field_maintenance_equipment__access_network
@@ -164,9 +226,24 @@ msgid "Cancelar"
 msgstr ""
 
 #. module: maintenance_equipment_it
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_maintenance_equipment_document
+msgid "Características Específicas"
+msgstr ""
+
+#. module: maintenance_equipment_it
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_maintenance_equipment_document
+msgid "Características Generales"
+msgstr ""
+
+#. module: maintenance_equipment_it
 #: model:ir.model.fields,field_description:maintenance_equipment_it.field_maintenance_equipment__cod_inventory
 msgid "Code Inventory"
 msgstr "Código de inventario"
+
+#. module: maintenance_equipment_it
+#: model:ir.model.fields,help:maintenance_equipment_it.field_maintenance_equipment__cod_inventory
+msgid "Code of inventory give for department accounting"
+msgstr "Código de inventario dado por el departamento de contabilidad"
 
 #. module: maintenance_equipment_it
 #: model:ir.model.fields,field_description:maintenance_equipment_it.field_maintenance_equipment_it_report_resume_wizard__company_id
@@ -189,19 +266,38 @@ msgid "Código:"
 msgstr ""
 
 #. module: maintenance_equipment_it
-#: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_maintenance_equipment_document
-msgid "DataSheet ["
-msgstr "Información del equipo"
-
-#. module: maintenance_equipment_it
 #: model:ir.actions.report,name:maintenance_equipment_it.action_report_maintenance_equipment
 msgid "Datasheet"
 msgstr "Información del equipo"
 
 #. module: maintenance_equipment_it
 #: model:ir.model.fields,field_description:maintenance_equipment_it.field_maintenance_equipment__depreciation_time
-msgid "Depreciation Time"
+msgid "Depreciation Months"
 msgstr "Meses de depreciación"
+
+#. module: maintenance_equipment_it
+#: model:ir.model.fields,help:maintenance_equipment_it.field_maintenance_equipment__ip_address
+msgid "Describes the address IP of equipment"
+msgstr "Describe la dirección IP del equipo"
+
+#. module: maintenance_equipment_it
+#: model:ir.model.fields,help:maintenance_equipment_it.field_maintenance_equipment__brand
+msgid "Describes the brand of equipment"
+msgstr "Describe la marca del equipo"
+
+#. module: maintenance_equipment_it
+#: model:ir.model.fields,help:maintenance_equipment_it.field_maintenance_equipment__state_equipment
+msgid ""
+"Describes the physical condition of the equipmentYou can set to: Good when "
+"it is working or Bad when it is damaged"
+msgstr "Describe el estado físico del equipo que puede ser cambiado a \n"
+        "Bueno: cuando está trabajando\n"
+        "Malo: cuando está dañado"
+
+#. module: maintenance_equipment_it
+#: model:ir.model.fields,help:maintenance_equipment_it.field_maintenance_equipment__description_processor
+msgid "Describes the processor of equipment"
+msgstr "Describe el procesador del equipo"
 
 #. module: maintenance_equipment_it
 #: model:ir.model.fields,field_description:maintenance_equipment_it.field_maintenance_equipment__description_processor
@@ -246,6 +342,11 @@ msgid "ID"
 msgstr ""
 
 #. module: maintenance_equipment_it
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_maintenance_equipment_document
+msgid "INFORMACIÓN TÉCNICA DEL EQUIPO"
+msgstr ""
+
+#. module: maintenance_equipment_it
 #: model:ir.model.fields,field_description:maintenance_equipment_it.field_maintenance_equipment__ip_address
 msgid "IP Address"
 msgstr "Dirección IP"
@@ -256,9 +357,34 @@ msgid "IT INFORMATION"
 msgstr "Información Técnica"
 
 #. module: maintenance_equipment_it
+#: model:ir.model.fields,help:maintenance_equipment_it.field_maintenance_equipment__active_vnc
+msgid "If the VNC is installed"
+msgstr "Si el VNC está instalado"
+
+#. module: maintenance_equipment_it
+#: model:ir.model.fields,help:maintenance_equipment_it.field_maintenance_equipment__active_backup
+msgid "If the backup system is active"
+msgstr "Sí el sistema de respaldo está activado"
+
+#. module: maintenance_equipment_it
+#: model:ir.model.fields,help:maintenance_equipment_it.field_maintenance_equipment__authorization_exit
+msgid "If the computer has permission to leave the company"
+msgstr "Sí el equipo tiene permiso para salir de la empresa"
+
+#. module: maintenance_equipment_it
+#: model:ir.model.fields,help:maintenance_equipment_it.field_maintenance_equipment__access_network
+msgid "If the equipment has accessto network"
+msgstr "Si el equipo tiene acceso a internet"
+
+#. module: maintenance_equipment_it
 #: model:ir.model.fields,field_description:maintenance_equipment_it.field_maintenance_equipment__image_equipment
 msgid "Image"
 msgstr "Imagen"
+
+#. module: maintenance_equipment_it
+#: model:ir.model.fields,help:maintenance_equipment_it.field_maintenance_equipment__image_equipment
+msgid "Image of equipment"
+msgstr "Imagen del equipo"
 
 #. module: maintenance_equipment_it
 #: model:ir.model.fields,field_description:maintenance_equipment_it.field_maintenance_equipment_it_report_resume_wizard____last_update
@@ -292,14 +418,45 @@ msgid "Maintenance Team"
 msgstr "Equipo de mantenimiento"
 
 #. module: maintenance_equipment_it
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_equipment_resume_document
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_maintenance_equipment_document
+msgid "N/A"
+msgstr ""
+
+#. module: maintenance_equipment_it
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_maintenance_equipment_document
+msgid "N/D"
+msgstr ""
+
+#. module: maintenance_equipment_it
 #: model:ir.model.fields.selection,name:maintenance_equipment_it.selection__maintenance_equipment__state_warranty__none
 msgid "NONE"
 msgstr "Ninguno"
 
 #. module: maintenance_equipment_it
+#: model:ir.model.fields,help:maintenance_equipment_it.field_maintenance_equipment_it_report_resume_wizard__company_id
+msgid "Name of company"
+msgstr "Nombre de la compañía"
+
+#. module: maintenance_equipment_it
+#: model:ir.model.fields,help:maintenance_equipment_it.field_maintenance_equipment_it_report_resume_wizard__maintenance_team_id
+msgid "Name of maintenance team"
+msgstr "Nombre del equipo de mantenimiento"
+
+#. module: maintenance_equipment_it
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_maintenance_equipment_document
+msgid "No"
+msgstr ""
+
+#. module: maintenance_equipment_it
 #: model:ir.model.fields.selection,name:maintenance_equipment_it.selection__maintenance_equipment__state_warranty__obsolete
 msgid "OBSOLETE"
 msgstr "Obsoleto"
+
+#. module: maintenance_equipment_it
+#: model:ir.ui.menu,name:maintenance_equipment_it.menu_m_operations_equipment
+msgid "Operations"
+msgstr "Operaciones"
 
 #. module: maintenance_equipment_it
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_equipment_resume_document
@@ -337,6 +494,26 @@ msgid "Set State Good"
 msgstr "Buen Estado"
 
 #. module: maintenance_equipment_it
+#: model:ir.model.fields,help:maintenance_equipment_it.field_maintenance_equipment__storage_hdd
+msgid "Specifies storage capacity"
+msgstr "Especifica la capacidad de almacenamiento"
+
+#. module: maintenance_equipment_it
+#: model:ir.model.fields,help:maintenance_equipment_it.field_maintenance_equipment__system_operative
+msgid "Specifies system operative installedin the computer"
+msgstr "Especifica el sistema operativo instalado en la computadora"
+
+#. module: maintenance_equipment_it
+#: model:ir.model.fields,help:maintenance_equipment_it.field_maintenance_equipment__architecture
+msgid "Specifies the architecture of the computer"
+msgstr "Especifica la arquitectura de la computadora"
+
+#. module: maintenance_equipment_it
+#: model:ir.model.fields,help:maintenance_equipment_it.field_maintenance_equipment__ram_memory
+msgid "Specifies the capacity of memory ram"
+msgstr "Especifica la capacidad de la memoria de RAM"
+
+#. module: maintenance_equipment_it
 #: model:ir.model.fields,field_description:maintenance_equipment_it.field_maintenance_equipment__state_warranty
 msgid "State Warranty"
 msgstr "Estado de la garantía"
@@ -347,6 +524,16 @@ msgid "Status Equipment"
 msgstr "Estado del equipo"
 
 #. module: maintenance_equipment_it
+#: model:ir.model.fields,help:maintenance_equipment_it.field_maintenance_equipment__state_warranty
+msgid ""
+"Status of the warranty. If it is in None means do not has warranty.But if it"
+" is in Valid means is has warranty.Or Obsolete means your warranty expired"
+msgstr "Estado de la garantía\n"
+        "Ninguno significa que no tiene garantía\n"
+        "Vigente significa que tiene garantía\n"
+        "Obsoleta que la garantía ya expiró"
+
+#. module: maintenance_equipment_it
 #: model:ir.model.fields,field_description:maintenance_equipment_it.field_maintenance_equipment__storage_hdd
 msgid "Storage HDD"
 msgstr "Disco duro"
@@ -355,6 +542,16 @@ msgstr "Disco duro"
 #: model:ir.model.fields,field_description:maintenance_equipment_it.field_maintenance_equipment__system_operative
 msgid "System Operative"
 msgstr "Sistema operativo"
+
+#. module: maintenance_equipment_it
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_maintenance_equipment_document
+msgid "Sí"
+msgstr ""
+
+#. module: maintenance_equipment_it
+#: model:ir.model.fields,help:maintenance_equipment_it.field_maintenance_equipment__depreciation_time
+msgid "Time the equipment depreciated"
+msgstr "Tiempo de depreciación del equipo"
 
 #. module: maintenance_equipment_it
 #: model:ir.model.fields.selection,name:maintenance_equipment_it.selection__maintenance_equipment__state_warranty__valid

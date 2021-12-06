@@ -11,7 +11,7 @@
                         type="object"
                         name="get_assignment"
                         icon="fa-th-large"
-                        groups="base.group_system">
+                        groups="maintenance_equipment_it.group_equipment_manager_it">
                     <field string="Assignments" name="assignment_count" widget="statinfo"/>
                 </button>
             </div>
@@ -57,7 +57,7 @@
                             <field name="assignment_type" />
                             <field name="user_id" readonly="1"/>
                             <field name="date_order" />
-                             <field name="date_retirement" attrs="{'invisible':[('assignment_type','!=','temp')]}" required='1'/>
+                             <field name="date_retirement" attrs="{'invisible':[('assignment_type','!=','temp')], 'required':[('assignment_type','=','temp')]}"/>
                             <field name="equipment_id" />
                             <field name="authorization_exit"/>
                         </group>

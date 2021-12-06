@@ -58,7 +58,7 @@ class MaintenanceEquipment(models.Model):
                                          "to network")
 
     cod_inventory = fields.Char('Code Inventory', copy=True,
-                                help="Code of inventory give for"
+                                help="Code of inventory give for "
                                      "department accounting")
 
     image_equipment = fields.Image('Image', max_width=1920, max_heigth=1920,
@@ -82,8 +82,8 @@ class MaintenanceEquipment(models.Model):
         string='State Warranty', readonly=True, index=True, store=True,
         default='none', compute='_compute_warranty_equipment',
         help="Status of the warranty. "
-             "If it is in None means do not has warranty."
-             "But if it is in Valid means is has warranty."
+             "If it is in None means do not has warranty. "
+             "But if it is in Valid means is has warranty. "
              "Or Obsolete means your warranty expired")
 
     brand = fields.Char('Brand',
