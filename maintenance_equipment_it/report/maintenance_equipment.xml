@@ -2,11 +2,9 @@
 <odoo>
     <data>
         <record id="paper_format_letter_landscape" model="report.paperformat">
-            <field name="name">US Letter Landscape</field>
+            <field name="name">US Legal Landscape</field>
             <field name="default" eval="True"/>
-            <field name="format">custom</field>
-            <field name="page_height">335</field>
-            <field name="page_width">216</field>
+            <field name="format">Legal</field>
             <field name="orientation">Landscape</field>
             <field name="margin_top">40</field>
             <field name="margin_bottom">28</field>

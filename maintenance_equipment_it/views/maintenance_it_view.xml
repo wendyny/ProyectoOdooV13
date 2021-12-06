@@ -16,7 +16,7 @@
             </xpath>
             <xpath expr="//sheet" position="before">
                 <header>
-                    <button name="button_good" type="object" string="Set State Good" attrs="{'invisible': [('state_equipment', '=', 'good')]}"/>
+                    <button name="button_good" type="object" string="Set State Good" attrs="{'invisible': [('state_equipment', '=', 'good')]}" groups="base.group_system"/>
                     <button name="button_bad" type="object" string="Set State Bad" attrs="{'invisible': [('state_equipment', '=', 'bad')]}"/>
                     <field name="state_equipment" widget="statusbar" statusbar_visible="good, bad" readonly="1"/>
                 </header>
@@ -39,7 +39,7 @@
 
 
             <xpath expr="//page[3]" position="after">
-                <page string="IT INFORMATION" groups="base.group_system">
+                <page string="IT INFORMATION" groups="maintenance_equipment_it.group_equipment_manager_it">
                     <group>
                         <group>
                             <field name="ip_address"/>
@@ -85,16 +85,10 @@
         <field name="inherit_id" ref="maintenance.hr_equipment_view_kanban"/>
         <field name="arch" type="xml">
 
-             <xpath expr="//div[contains(@t-attf-class,'oe_kanban_card')]" position="attributes">
-                <attribute name="t-attf-class" add="o_kanban_record_has_image_fill o_hr_kanban_record" separator=" "/>
-            </xpath>
-
             <xpath expr="//div[contains(@t-attf-class,'oe_kanban_card')]//div[@class='oe_kanban_content']" position="before">
-                <field name="image_equipment" widget="image" class="o_kanban_image_fill_left mr-2" options="{'background': true, 'preventClicks': false, 'size':[80,80]}"/>
-            </xpath>
-
-            <xpath expr="//div[@class='oe_kanban_content']" position="attributes">
-                <attribute name="class" add="ml-2" separator=" "/>
+                <div class="o_kanban_image">
+                    <field name="image_equipment" widget="image" class="o_image_64_contain" options="{'background': true, 'preventClicks': false, 'size':[64,64]}"/>
+                </div>
             </xpath>
         </field>
     </record>
@@ -105,7 +99,8 @@
             <field name="inherit_id" ref="maintenance.hr_equipment_view_tree"/>
             <field name="arch" type="xml">
              <tree>
-                <field name="state_equipment"/>
+                    <field name="location"/>
+                    <field name="state_equipment"/>
            </tree>
             </field>
     </record>
@@ -114,6 +109,7 @@
               id="menu_m_operations_equipment"
               name="Operations"
               parent="maintenance.menu_maintenance_title"
+              groups="maintenance_equipment_it.group_equipment_manager_it"
               sequence="4"
               />
 

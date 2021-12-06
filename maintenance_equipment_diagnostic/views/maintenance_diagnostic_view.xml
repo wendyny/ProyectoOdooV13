@@ -11,7 +11,7 @@
                         type="object"
                         name="get_diagnostic"
                         icon="fa-search"
-                        groups="base.group_system">
+                        groups="maintenance_equipment_it.group_equipment_manager_it">
                     <field string="Diagnostics" name="diagnostic_count" widget="statinfo"/>
                 </button>
             </div>

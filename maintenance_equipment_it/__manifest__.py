@@ -11,6 +11,7 @@
     'summary': 'Track equipment and manage maintenance requests',
     'website': '',
     'data': [
+        'security/maintenance.xml',
         'views/maintenance_it_view.xml',
         'report/maintenance_equipment.xml',
         'report/maintenance_equipment_template.xml',
