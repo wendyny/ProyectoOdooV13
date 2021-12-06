@@ -109,6 +109,7 @@
               id="menu_m_operations_equipment"
               name="Operations"
               parent="maintenance.menu_maintenance_title"
+              groups="maintenance_equipment_it.group_equipment_manager_it"
               sequence="4"
               />
 
