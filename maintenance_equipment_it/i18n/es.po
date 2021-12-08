@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0-20210105\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-04 15:58+0000\n"
-"PO-Revision-Date: 2021-12-04 15:58+0000\n"
+"POT-Creation-Date: 2021-12-07 16:43+0000\n"
+"PO-Revision-Date: 2021-12-07 16:43+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -290,9 +290,10 @@ msgstr "Describe la marca del equipo"
 msgid ""
 "Describes the physical condition of the equipmentYou can set to: Good when "
 "it is working or Bad when it is damaged"
-msgstr "Describe el estado físico del equipo que puede ser cambiado a \n"
-        "Bueno: cuando está trabajando\n"
-        "Malo: cuando está dañado"
+msgstr ""
+"Describe el estado físico del equipo que puede ser cambiado a \n"
+"Bueno: cuando está trabajando\n"
+"Malo: cuando está dañado"
 
 #. module: maintenance_equipment_it
 #: model:ir.model.fields,help:maintenance_equipment_it.field_maintenance_equipment__description_processor
@@ -318,6 +319,11 @@ msgstr "Nombre mostrado"
 #. module: maintenance_equipment_it
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_equipment_resume_document
 msgid "Edición:"
+msgstr ""
+
+#. module: maintenance_equipment_it
+#: model:res.groups,name:maintenance_equipment_it.group_equipment_manager_it
+msgid "Equipment Manager it"
 msgstr ""
 
 #. module: maintenance_equipment_it
@@ -515,8 +521,9 @@ msgstr "Especifica la capacidad de la memoria de RAM"
 
 #. module: maintenance_equipment_it
 #: model:ir.model.fields,field_description:maintenance_equipment_it.field_maintenance_equipment__state_warranty
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.hr_equipment_view_search_inherit
 msgid "State Warranty"
-msgstr "Estado de la garantía"
+msgstr "Garantía"
 
 #. module: maintenance_equipment_it
 #: model:ir.model.fields,field_description:maintenance_equipment_it.field_maintenance_equipment__state_equipment
@@ -526,8 +533,9 @@ msgstr "Estado del equipo"
 #. module: maintenance_equipment_it
 #: model:ir.model.fields,help:maintenance_equipment_it.field_maintenance_equipment__state_warranty
 msgid ""
-"Status of the warranty. If it is in None means do not has warranty.But if it"
-" is in Valid means is has warranty.Or Obsolete means your warranty expired"
+"Status of the warranty. If it is in None means do not has warranty. But if "
+"it is in Valid means is has warranty. Or Obsolete means your warranty "
+"expired"
 msgstr "Estado de la garantía\n"
         "Ninguno significa que no tiene garantía\n"
         "Vigente significa que tiene garantía\n"
@@ -547,6 +555,11 @@ msgstr "Sistema operativo"
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_it.report_maintenance_equipment_document
 msgid "Sí"
 msgstr ""
+
+#. module: maintenance_equipment_it
+#: model:res.groups,comment:maintenance_equipment_it.group_equipment_manager_it
+msgid "The user will be able to manage equipments."
+msgstr "El usuario podrá gestionar equipos."
 
 #. module: maintenance_equipment_it
 #: model:ir.model.fields,help:maintenance_equipment_it.field_maintenance_equipment__depreciation_time

@@ -72,10 +72,15 @@
             <xpath expr="//field[@name='owner_user_id']" position="after">
                <field name="brand"/>
             </xpath>
+            <xpath expr="//field[@name='brand']" position="after">
+               <field name="state_warranty"/>
+            </xpath>
 
             <xpath expr="//group" position="inside">
                <filter string='Brand' name="brand" domain="[]" context="{'group_by': 'brand'}"/>
+               <filter string='State Warranty' name="state_warranty" domain="[]" context="{'group_by': 'state_warranty'}"/>
             </xpath>
+
         </field>
     </record>
 
@@ -101,6 +106,7 @@
              <tree>
                     <field name="location"/>
                     <field name="state_equipment"/>
+                    <field name="state_warranty"/>
            </tree>
             </field>
     </record>

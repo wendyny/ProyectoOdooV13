@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0-20210105\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-02 19:37+0000\n"
-"PO-Revision-Date: 2021-12-02 19:37+0000\n"
+"POT-Creation-Date: 2021-12-08 15:37+0000\n"
+"PO-Revision-Date: 2021-12-08 15:37+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -409,6 +409,11 @@ msgid "Activity State"
 msgstr "Estado de la actividad"
 
 #. module: maintenance_equipment_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.hr_equipment_view_form2_inherit
+msgid "Add Assignment"
+msgstr "Crear asignación"
+
+#. module: maintenance_equipment_assignment
 #: model_terms:ir.actions.act_window,help:maintenance_equipment_assignment.maintenance_assignment_action
 msgid "Add a new stage in the maintenance assignment"
 msgstr "Agregar una nueva etapa en la asignación de mantenimiento"
@@ -445,7 +450,10 @@ msgstr "Tipo"
 msgid ""
 "Assignment for new equipment.Re-assignment for existing equipment.Temporal "
 "for defined time assignments. "
-msgstr "Asignación es para equipo nuevo. Re-asignación es para equipo existente. Temporal es para equipo prestado por tiempo definido"
+msgstr ""
+"- Asignación es para equipo nuevo.\n"
+"- Re-asignación es para equipo existente.\n"
+"- Temporal es para equipo prestado por tiempo definido"
 
 #. module: maintenance_equipment_assignment
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.hr_equipment_assignment_view_search
@@ -930,7 +938,10 @@ msgstr ""
 msgid ""
 "Status of the assignment. If it is in draft you can still modify the "
 "assignment.But if it is in done you can not change."
-msgstr "Estado de la asignación. Si esta en borrador aún se puede modificar. Pero si en hecho no se puede cambiar"
+msgstr ""
+"Estado de la asignación.\n"
+ "Si esta en Borrador aun se puede modificar.\n"
+ "Pero si está en Hecho no se puede cambiar."
 
 #. module: maintenance_equipment_assignment
 #: model_terms:ir.ui.view,arch_db:maintenance_equipment_assignment.report_assignment_equipment_1_document
