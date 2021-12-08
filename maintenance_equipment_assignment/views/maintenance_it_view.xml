@@ -18,6 +18,23 @@
         </field>
     </record>
 
+     <record id="hr_equipment_view_form2_inherit" model="ir.ui.view">
+        <field name="name">hr.equipment.view.form</field>
+        <field name="model">maintenance.equipment</field>
+        <field name="inherit_id" ref="maintenance_equipment_it.hr_equipment_view_form_inherit"/>
+        <field name="arch" type="xml">
+             <xpath expr="//header" position="inside">
+                <field name="assignment_count" invisible="1"/>
+                <button
+                        name="button_add_assignment"
+                        type="object"
+                        string="Add Assignment"
+                        attrs="{'invisible': [('assignment_count', '!=', 0)]}"
+                        groups="maintenance_equipment_it.group_equipment_manager_it"/>
+            </xpath>
+        </field>
+     </record>
+
     <record id="assignment_equipment_order_tree" model="ir.ui.view">
             <field name="name">assignment.equipment.order.tree</field>
             <field name="model">maintenance.equipment.assignment</field>

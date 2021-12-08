@@ -74,7 +74,7 @@ class MaintenanceAssignment(models.Model):
 
     department_employee_id = fields.Many2one('hr.department',
                                              string='Department',
-                                             compute='_compute_employee_data',
+                                             compute='_compute_employee_department',
                                              inverse="_compute_employee_inv",
                                              states=READONLY_STATES,
                                              store=True,
@@ -82,7 +82,7 @@ class MaintenanceAssignment(models.Model):
                                                   " the employee")
 
     parent_employee_id = fields.Many2one('hr.employee', string='Parent',
-                                         compute='_compute_employee_data',
+                                         compute='_compute_employee_parent',
                                          inverse="_compute_employee_inv",
                                          states=READONLY_STATES,
                                          store=True,
@@ -126,9 +126,13 @@ class MaintenanceAssignment(models.Model):
         pass
 
     @api.depends('employee_id')
-    def _compute_employee_data(self):
+    def _compute_employee_department(self):
         for order in self:
             order.department_employee_id = order.employee_id.department_id
+
+    @api.depends('employee_id', 'department_employee_id')
+    def _compute_employee_parent(self):
+        for order in self:
             order.parent_employee_id = order.employee_id.parent_id
 
             if order.department_employee_id and not order.parent_employee_id:
@@ -139,6 +143,10 @@ class MaintenanceAssignment(models.Model):
     def create(self, val):
         if self.env['maintenance.equipment'].browse(val['equipment_id']).state_equipment == 'bad':
             raise UserError("This equipment can't assigned")
+
+        # if self.env['maintenance.equipment.assignment'].search(
+        #         [['equipment_id','=',val['equipment_id']], ['state','=','draft']]):
+        #     raise UserError("This equipment has a pending assignment in draft")
 
         if val.get('name', 'New') == 'New':
             company_id = val.get("company_id", self.env.company.id)
@@ -153,6 +161,43 @@ class MaintenanceEquipment(models.Model):
     _name = 'maintenance.equipment'
     _inherit = 'maintenance.equipment'
     _description = 'Maintenance Equipment'
+
+    def button_add_assignment(self):
+        for record in self:
+            line = {}
+
+            if record.equipment_assign_to in ('other', 'employee') and \
+                    not record.employee_id:
+                raise UserError("Employee is required")
+
+            if record.equipment_assign_to in ('other', 'department') and \
+                    not record.department_id:
+                raise UserError("Department is required")
+
+            department_id = record.department_id.id
+            employee_id = record.employee_id.id or record.department_id.manager_id.id
+
+            if department_id:
+                line = {
+                            'equipment_id': record.id,
+                            'assignment_type': 'assignment',
+                            'date_order': record.assign_date or fields.Datetime.now(),
+                            'employee_id': employee_id,
+                            'department_employee_id': department_id,
+                            'reason_assignment': 'Asignación inicial',
+                            'state': 'draft'
+                        }
+            else:
+                line = {
+                    'equipment_id': record.id,
+                    'assignment_type': 'assignment',
+                    'date_order': record.assign_date or fields.Datetime.now(),
+                    'employee_id': employee_id,
+                    'reason_assignment': 'Asignación inicial',
+                    'state': 'draft'
+                }
+
+            record.assignment_ids.create(line)
 
     assignment_count = fields.Integer(compute="_compute_assignment",
                                       string='Assignment Count', copy=False,
@@ -182,35 +227,39 @@ class MaintenanceEquipment(models.Model):
                         }
         }
 
-    @api.model
-    def create(self, val):
-        record = super(MaintenanceEquipment, self).create(val)
-
-        line = {}
-        if record.employee_id or \
-                (record.department_id and record.department_id.manager_id):
-            line = {
-                    'equipment_id': record.id,
-                    'assignment_type': 'assignment',
-                    'date_order': record.assign_date or fields.Datetime.now(),
-                    'employee_id': record.employee_id.id or
-                                   record.department_id.manager_id.id,
-                    'reason_assignment': 'Asignación inicial',
-                    'state': 'done'
-                }
-        else:
-            line = {
-                    'equipment_id': record.id,
-                    'assignment_type': 'assignment',
-                    'date_order': record.assign_date or fields.Datetime.now(),
-                    'employee_id': self.env.user.employee_ids[0].id,
-                    'reason_assignment': 'Asignación inicial a IT',
-                    'state': 'done'
-                }
-
-        record.assignment_ids.create(line)
-
-        return record
+    # @api.model
+    # def create(self, val):
+    #     record = super(MaintenanceEquipment, self).create(val)
+    #
+    #     line = {}
+    #     if record.employee_id or \
+    #             (record.department_id and record.department_id.manager_id):
+    #
+    #         if record.equipment_assign_to not in ('employee', 'department'):
+    #             department_id = record.department_id
+    #         employee_id = record.employee_id.id or record.department_id.manager_id.id
+    #         line = {
+    #                 'equipment_id': record.id,
+    #                 'assignment_type': 'assignment',
+    #                 'date_order': record.assign_date or fields.Datetime.now(),
+    #                 'employee_id': employee_id,
+    #                 'department_id': department_id,
+    #                 'reason_assignment': 'Asignación inicial',
+    #                 'state': 'done'
+    #             }
+    #     else:
+    #         line = {
+    #                 'equipment_id': record.id,
+    #                 'assignment_type': 'assignment',
+    #                 'date_order': record.assign_date or fields.Datetime.now(),
+    #                 'employee_id': self.env.user.employee_ids[0].id,
+    #                 'reason_assignment': 'Asignación inicial a IT',
+    #                 'state': 'done'
+    #             }
+    #
+    #     record.assignment_ids.create(line)
+    #
+    #     return record
 
 
 
