@@ -5,7 +5,7 @@
         <t t-set="iso_code" t-value="'F-457'"/>
         <t t-set="iso_revi" t-value="'01'"/>
         <t t-set="iso_date" t-value="'29.02.2017'"/>
-        <t t-set="iso_name" t-value="'Responsiva del Equipo'"/>
+        <t t-set="iso_name" t-value="'RESPONSIVA DEL EQUIPO'"/>
         <t t-set="company" t-value="res_company"/>
 
         <div id="header" class="header mt-3 pt-2">
@@ -20,7 +20,7 @@
                      <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 35px;" alt="Logo"/>
                   </td>
                   <td rowspan="2" class="border border-dark text-center" style="vertical-align:middle;">
-                     <h2><span t-field="company.name"/></h2>
+                     <h2 class="text-uppercase"><span t-field="company.name"/></h2>
                   </td>
                   <td class="border border-dark">
                     Código: <span t-esc="iso_code"/>
@@ -230,9 +230,9 @@
     </template>
 
     <template id="report_assignment_equipment_2_document">
-        <t t-set="iso_code" t-value="'----'"/>
-        <t t-set="iso_revi" t-value="'----'"/>
-        <t t-set="iso_date" t-value="'----'"/>
+        <t t-set="iso_code" t-value="'F-887'"/>
+        <t t-set="iso_revi" t-value="'01'"/>
+        <t t-set="iso_date" t-value="'04/12/2021'"/>
         <t t-set="iso_name" t-value="'Asignación de Equipo'"/>
         <t t-set="company" t-value="res_company"/>
 
@@ -248,7 +248,7 @@
                      <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 35px;" alt="Logo"/>
                   </td>
                   <td rowspan="2" class="border border-dark text-center" style="vertical-align:middle;">
-                     <h2><span t-field="company.name"/></h2>
+                     <h2 class="text-uppercase"><span t-field="company.name"/></h2>
                   </td>
                   <td class="border border-dark">
                     Código: <span t-esc="iso_code"/>
@@ -312,7 +312,7 @@
               <td scope="col"><span t-field="o.assignment_type"/> </td>
           </tr>
           <tr>
-              <td scope="col"><strong>Departamento: </strong></td>
+              <td scope="col"><strong>Proceso: </strong></td>
               <td scope="col"><span t-field="o.department_employee_id"/> </td>
               <td scope="col"><strong>Representante de IT: </strong></td>
               <td scope="col"><span t-field="o.user_id"/> </td>
