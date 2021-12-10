@@ -26,7 +26,7 @@
                            <td colspan="2" class="text-center"><strong>Categoría</strong></td>
                            <td class="text-right"><strong>Modelo</strong></td>
                            <td class="text-center"><span t-field="o.model"/></td>
-                           <td colspan="2" class="text-center"><strong>Estado del equipo</strong></td>
+                           <td colspan="2" class="text-center"><strong>Estado físico del equipo</strong></td>
                         </tr>
                         <tr>
                            <td colspan="2" class="text-center"><span t-field="o.category_id"/></td>
@@ -38,7 +38,7 @@
                         <tr>
                             <td colspan="2" class="text-center"><strong>No. Serie</strong></td>
 
-                          <td colspan="2" class="text-center"><strong>Tiempo de depreciación</strong></td>
+                          <td colspan="2" class="text-center"><strong>Tiempo de vigencia</strong></td>
                         </tr>
                         <tr>
                             <td colspan="2" class="text-center"><span t-field="o.serial_no"/></td>
@@ -59,12 +59,12 @@
                             </td>
                           </tr>
                          <tr>
-                            <td colspan="2" class="text-center"><strong>Fecha expiración de garantía</strong></td>
-                            <td colspan="2" class="text-center"><strong>Estado de la garantía</strong></td>
+                            <td colspan="2" class="text-center"><strong>Fecha expiración de vigencia</strong></td>
+                            <td colspan="2" class="text-center"><strong>Estado de actual</strong></td>
 
                           </tr>
                           <tr>
-                            <td colspan="2" class="text-center"><span t-field="o.warranty_date"/></td>
+                            <td colspan="2" class="text-center"><span t-field="o.obsolete_date"/></td>
                             <td colspan="2" class="text-center"><span t-field="o.state_warranty"/></td>
                           </tr>
                           <tr>

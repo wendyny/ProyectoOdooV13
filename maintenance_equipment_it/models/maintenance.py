@@ -70,10 +70,13 @@ class MaintenanceEquipment(models.Model):
                                         help="If the computer has permission "
                                              "to leave the company")
 
-    depreciation_time = fields.Float('Depreciation Months', store=True,
+    obsolete_date = fields.Date('Obsolete Date', store=True,
+                                help="Date the equipment obsolete")
+
+    depreciation_time = fields.Float('Valid Months', store=True,
                                      compute='_compute_depreciation_time',
                                      inverse='_compute_depreciation_date',
-                                     help="Time the equipment depreciated")
+                                     help="Time the equipment valid")
 
     state_warranty = fields.Selection([
         ('none', 'NONE'),
@@ -89,29 +92,29 @@ class MaintenanceEquipment(models.Model):
     brand = fields.Char('Brand',
                         help="Describes the brand of equipment")
 
-    @api.depends('effective_date', 'warranty_date')
+    @api.depends('effective_date', 'obsolete_date')
     def _compute_depreciation_time(self):
         for equipment in self:
-            if equipment.effective_date and equipment.warranty_date:
-                seconds = (equipment.warranty_date-equipment.effective_date).\
+            if equipment.effective_date and equipment.obsolete_date:
+                seconds = (equipment.depreciation_date-equipment.effective_date).\
                     total_seconds()
-                equipment.depreciation_time = seconds/(24*60*60)/30
+                equipment.obsolete_date = seconds/(24*60*60)/30
 
     @api.depends('effective_date', 'depreciation_time')
     def _compute_depreciation_date(self):
         for equipment in self:
-            if equipment.effective_date and equipment.depreciation_time:
-                equipment.warranty_date = \
+            if equipment.effective_date and equipment.obsolete_date:
+                equipment.depreciation_date = \
                     equipment.effective_date +\
-                    timedelta(days=equipment.depreciation_time*30)
+                    timedelta(days=equipment.obsolete_date*30)
 
     @api.depends('effective_date', 'warranty_date')
     def _compute_warranty_equipment(self):
         for equipment in self:
-            if not equipment.effective_date or not equipment.warranty_date:
+            if not equipment.effective_date or not equipment.obsolete_date:
                 equipment.state_warranty = 'none'
             elif equipment.effective_date <= fields.Date.today() <= \
-                    equipment.warranty_date:
+                    equipment.obsolete_date:
                 equipment.state_warranty = 'valid'
             else:
                 equipment.state_warranty = 'obsolete'
