@@ -70,7 +70,7 @@ class MaintenanceEquipment(models.Model):
                                         help="If the computer has permission "
                                              "to leave the company")
 
-    obsolete_date = fields.Date('Obsolete Date', store=True,
+    obsolete_date = fields.Date('Obsolete Date',
                                 help="Date the equipment obsolete")
 
     depreciation_time = fields.Float('Valid Months', store=True,
@@ -96,19 +96,19 @@ class MaintenanceEquipment(models.Model):
     def _compute_depreciation_time(self):
         for equipment in self:
             if equipment.effective_date and equipment.obsolete_date:
-                seconds = (equipment.depreciation_date-equipment.effective_date).\
+                seconds = (equipment.obsolete_date-equipment.effective_date).\
                     total_seconds()
-                equipment.obsolete_date = seconds/(24*60*60)/30
+                equipment.depreciation_time = seconds/(24*60*60)/30
 
     @api.depends('effective_date', 'depreciation_time')
     def _compute_depreciation_date(self):
         for equipment in self:
-            if equipment.effective_date and equipment.obsolete_date:
-                equipment.depreciation_date = \
+            if equipment.effective_date and equipment.depreciation_time:
+                equipment.obsolete_date = \
                     equipment.effective_date +\
-                    timedelta(days=equipment.obsolete_date*30)
+                    timedelta(days=equipment.depreciation_time*30)
 
-    @api.depends('effective_date', 'warranty_date')
+    @api.depends('effective_date', 'obsolete_date')
     def _compute_warranty_equipment(self):
         for equipment in self:
             if not equipment.effective_date or not equipment.obsolete_date:
