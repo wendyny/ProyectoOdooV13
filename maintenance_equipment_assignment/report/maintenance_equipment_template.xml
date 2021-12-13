@@ -20,7 +20,7 @@
                      <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 35px;" alt="Logo"/>
                   </td>
                   <td rowspan="2" class="border border-dark text-center" style="vertical-align:middle;">
-                     <h2 class="text-uppercase"><span t-field="company.name"/></h2>
+                     <h3 class="text-uppercase"><span t-field="company.name"/></h3>
                   </td>
                   <td class="border border-dark">
                     Código: <span t-esc="iso_code"/>
@@ -149,7 +149,7 @@
                             <span style="width:50px; display:inline-block; ">Sí</span>
                             <span class="border border-dark text-center">
                                 <t t-esc="foo"/>
-                                <span t-if="o.equipment_id.authorization_exit" >X</span>
+                                <span t-if="o.authorization_exit" >X</span>
                                 <t t-else="" t-esc="foo+foo"/>
                                 <t t-esc="foo"/>
                             </span>
@@ -157,7 +157,7 @@
                             <span style="width:50px; display:inline-block;">No</span>
                             <span class="border border-dark text-center">
                                 <t t-esc="foo"/>
-                                <span t-if="not o.equipment_id.authorization_exit">X</span>
+                                <span t-if="not o.authorization_exit">X</span>
                                 <t t-else="" t-esc="foo+foo"/>
                                  <t t-esc="foo"/>
                             </span>

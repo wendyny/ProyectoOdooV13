@@ -543,7 +543,7 @@ msgstr "Estado actual"
 #. module: maintenance_equipment_it
 #: model:ir.model.fields,field_description:maintenance_equipment_it.field_maintenance_equipment__state_equipment
 msgid "Status Equipment"
-msgstr "Estado del equipo"
+msgstr "Estado Físico del equipo"
 
 #. module: maintenance_equipment_it
 #: model:ir.model.fields,help:maintenance_equipment_it.field_maintenance_equipment__state_warranty
