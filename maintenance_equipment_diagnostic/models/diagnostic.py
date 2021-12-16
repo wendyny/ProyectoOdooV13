@@ -20,6 +20,9 @@ class MaintenanceDiagnostic(models.Model):
     def button_cancel(self):
         self.write({'state': 'cancel'})
 
+    def button_draft(self):
+        self.write({'state': 'draft'})
+
     READONLY_STATES = {
         'done': [('readonly', True)],
         'cancel': [('readonly', True)],

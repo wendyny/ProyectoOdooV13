@@ -41,6 +41,7 @@
                 <header>
                     <button string="Confirm" name="button_done" type="object" states="draft"/>
                     <button string="Cancel" name="button_cancel" type="object" states="draft,done"/>
+                    <button string="Set Draft" name="button_draft" type="object" states="done,cancel" groups="base.group_system"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
                 </header>
                 <sheet>

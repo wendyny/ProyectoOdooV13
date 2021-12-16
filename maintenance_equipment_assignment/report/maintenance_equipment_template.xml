@@ -144,9 +144,9 @@
                     </h5>
                     <br/>
                    <t t-set="foo" t-value=" ' '.replace(' ',u'\xa0').encode('utf-8') "/>
-                    <h5 class="text-justify">Está autorizado para sacar este equipo de plastinova:
+                    <h5 class="text-justify">Está autorizado para sacar este equipo de Plastinova:
                         <strong>
-                            <span style="width:50px; display:inline-block; ">Sí</span>
+                            <span style="width:50px; display:inline-block; ">SI</span>
                             <span class="border border-dark text-center">
                                 <t t-esc="foo"/>
                                 <span t-if="o.authorization_exit" >X</span>
@@ -154,7 +154,7 @@
                                 <t t-esc="foo"/>
                             </span>
                             <t t-esc="foo+foo+foo"/>
-                            <span style="width:50px; display:inline-block;">No</span>
+                            <span style="width:50px; display:inline-block;">NO</span>
                             <span class="border border-dark text-center">
                                 <t t-esc="foo"/>
                                 <span t-if="not o.authorization_exit">X</span>
