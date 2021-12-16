@@ -39,6 +39,7 @@ class MaintenanceDiagnostic(models.Model):
                        help="New diagnostic")
 
     equipment_id = fields.Many2one('maintenance.equipment', 'Equipment',
+                                   states=READONLY_STATES,
                                    required=True, help="ID of equipment ")
 
     user_id = fields.Many2one('res.users', string='IT Representative',
