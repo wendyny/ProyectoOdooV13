@@ -3,8 +3,8 @@
 
     <template id="report_assignment_equipment_1_document">
         <t t-set="iso_code" t-value="'F-457'"/>
-        <t t-set="iso_revi" t-value="'01'"/>
-        <t t-set="iso_date" t-value="'29.02.2017'"/>
+        <t t-set="iso_revi" t-value="'02'"/>
+        <t t-set="iso_date" t-value="'21.12.2021'"/>
         <t t-set="iso_name" t-value="'RESPONSIVA DEL EQUIPO'"/>
         <t t-set="company" t-value="res_company"/>
 
@@ -42,7 +42,7 @@
                <tr class="border border-dark">
 
                   <td class="border border-dark">
-                        Pagina:
+                        Página:
                         <span class="page"/>
                         /
                         <span class="topage"/>
@@ -62,8 +62,8 @@
                 </div>
                 <div>
                                  <h5 class="text-justify">Por este medio hago constar que he recibido de los procesos de
-                        <strong>IT</strong> y <strong>RRHH</strong>
-                        Plastinova Industrial S.A. el equipo que se menciona a continuación:
+                        <strong>IT</strong> y <strong>RRHH PLASTINOVA INDUSTRIAL S.A.,</strong>
+                         el equipo que se menciona a continuación:
                     </h5>
                     <br/>
                     <div id="informations">
@@ -83,7 +83,7 @@
                                 </tr>
                                 <tr class="text-left">
                                     <th class="text-left border border-dark">
-                                        <strong>No. serie</strong>
+                                        <strong>Número de Serie</strong>
                                     </th>
                                     <td name="th_serial_no" class="text-left border border-dark">
                                         <span t-field="o.equipment_id.serial_no"/>
@@ -91,7 +91,7 @@
                                 </tr>
                                 <tr>
                                     <th name="th_taxes" class="text-left border border-dark">
-                                        <strong>Cód. de inventario</strong>
+                                        <strong>Cód. de Inventario Contabilidad </strong>
                                     </th>
                                     <td class="text-left border border-dark">
                                        <span t-if="o.equipment_id.cod_inventory" t-field="o.equipment_id.cod_inventory"/>
@@ -101,7 +101,7 @@
                                 </tr>
                                 <tr>
                                     <th name="th_date_req" class="text-left border border-dark">
-                                        <strong>Fecha de recepción</strong>
+                                        <strong>Fecha de Recepción</strong>
                                     </th>
                                     <td class="text-left border border-dark">
                                         <span t-field="o.date_order"/>
@@ -109,7 +109,7 @@
                                 </tr>
                                 <tr>
                                     <th name="th_price_unit" class="text-left border border-dark">
-                                        <strong>Tiempo de depreciación</strong>
+                                        <strong>Tiempo de Depreciación</strong>
                                     </th>
                                     <td class="text-left border border-dark">
                                         <span t-field="o.equipment_id.depreciation_time"  t-options="{'widget': 'float','precision':0}"/>
@@ -118,7 +118,7 @@
                                 </tr>
                                 <tr>
                                     <th name="th_quantity" class="text-left border border-dark">
-                                        <strong>Costo del equipo</strong>
+                                        <strong>Costo del Equipo</strong>
                                     </th>
                                     <td class="text-left border border-dark">
                                         <span t-if="o.equipment_id.cost" t-field="o.equipment_id.cost" t-options="{'widget': 'monetary','display_currency': res_company.currency_id}"/>
@@ -129,7 +129,7 @@
                         </table>
                     </div>
                     <br/>
-                    <h5 class="text-justify"> También indicó que el equipo está en perfecto estado y cualquier
+                    <h5 class="text-justify"> También indico que el equipo está en perfecto estado y cualquier
                         daño a este
                         es responsabilidad mía como usuario y me comprometo a mantenerlo en la misma condición en que se
                         me entrega
@@ -144,7 +144,7 @@
                     </h5>
                     <br/>
                    <t t-set="foo" t-value=" ' '.replace(' ',u'\xa0').encode('utf-8') "/>
-                    <h5 class="text-justify">Está autorizado para sacar este equipo de Plastinova:
+                    <h5 class="text-justify">Está autorizado para sacar este equipo de PlastiNova:
                         <strong>
                             <span style="width:50px; display:inline-block; ">SI</span>
                             <span class="border border-dark text-center">
@@ -168,9 +168,9 @@
 
                     <h5 class="text-justify">
                         <strong>
-                            <span>Nota:</span>
+                            <span><u>Nota:</u></span>
                         </strong>
-                        De estar autorizado y exista algún robo,
+                         De estar autorizado y exista algún robo,
                         deberá presentar denuncia ante autoridad competente.
                     </h5>
                     <br/>
@@ -186,7 +186,7 @@
                                         <strong>Proceso que recibe</strong>
                                     </th>
                                     <th class="border border-dark">
-                                        <strong>Proceso que entrega</strong>
+                                        <strong>Proceso de Entrega</strong>
                                     </th>
                                 </tr>
 
