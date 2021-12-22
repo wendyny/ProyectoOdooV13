@@ -4,7 +4,7 @@
     <template id="report_assignment_equipment_1_document">
         <t t-set="iso_code" t-value="'F-457'"/>
         <t t-set="iso_revi" t-value="'02'"/>
-        <t t-set="iso_date" t-value="'21.12.2021'"/>
+        <t t-set="iso_date" t-value="'22.12.2021'"/>
         <t t-set="iso_name" t-value="'RESPONSIVA DEL EQUIPO'"/>
         <t t-set="company" t-value="res_company"/>
 
